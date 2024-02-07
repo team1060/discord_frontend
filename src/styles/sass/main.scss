@@ -20,8 +20,12 @@
 
 // Components
 @import 'components/buttons';
-@import 'components/media';
 @import 'components/carousel';
+@import 'components/login-form';
+@import 'components/media';
+@import 'components/modal-dialog';
+@import 'components/popout-dialog';
+@import 'components/register-form';
 @import 'components/thumbnails';
 
 // Pages
@@ -33,5 +37,5 @@
 @import 'pages/ServerChannelPage/ServerChannelPage.scss';
 
 // Themes
-@import 'themes/theme';
-@import 'themes/admin';
+@import 'themes/dark-theme';
+@import 'themes/primary-theme';

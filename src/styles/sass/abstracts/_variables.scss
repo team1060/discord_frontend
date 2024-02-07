@@ -4,7 +4,8 @@
 $base-font-family: 'Wanted';
 
 // 배경 색상
-$base-background-color: #1e1f22;
+$dark-background-color: #1e1f22;
+$primary-background-color: #5865f2;
 $server-background-color: #313338;
 $server-background-hover-color: #5865f2;
 $chatroom-color: #2b2d31;
@@ -28,8 +29,7 @@ $yellow-button-hover-color: #d9a028;
 $blue-button-color: #4c57d2;
 $blue-button-hover-color: #4752c4;
 
-// 로고 및 아바타 색상
-$logo-background-color: #5865f2;
+// 아바타 색상
 $avatar-colors: (#d92a43, #e64939, #7aba5e, #473c88);
 
 // 폰트 색상
@@ -91,3 +91,9 @@ $popout-dialog-width: 340px;
 $popout-dialog-height: 384px;
 $modal-dialog-width: 600px;
 $modal-dialog-height: 568px;
+
+// 폼 크기
+$login-form-width: 480px;
+$login-form-height: 384px;
+$register-form-width: 480px;
+$register-form-height: 666px;

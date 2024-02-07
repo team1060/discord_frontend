@@ -1,0 +1,5 @@
+// _dark-theme.scss
+
+.dark-theme {
+  @include applyTheme($dark-background-color);
+}

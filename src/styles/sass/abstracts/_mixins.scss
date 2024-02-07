@@ -5,3 +5,23 @@
   width: $width;
   height: $height;
 }
+
+// 로그인, 회원가입 폼 크기
+@mixin form-size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+// 로그인, 회원가입 폼 중앙 정렬
+@mixin form-properties {
+  opacity: 1;
+  transform: scale(1) translateY(0px) translateZ(0px);
+}
+
+// 전체 화면에 특정 테마를 적용
+@mixin applyTheme($theme) {
+  // 전체 화면에 특정 테마를 적용하는 mixin
+  width: 100vw;
+  height: 100vh;
+  background: $theme;
+}

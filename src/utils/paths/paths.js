@@ -1,6 +1,6 @@
 export const PATH = {
-  LOGIN: '/login',
-  REGISTER: 'register',
+  LOGIN: '/',
+  REGISTER: '/register',
   RESET_PASSWORD: '/reset',
   MAIN_SCREEN: '/channels/@me',
   DIRECT_MESSAGE: '/channels/@me/{serverId}',

@@ -1,0 +1,7 @@
+// _mixins.scss
+
+// dialog 크기
+@mixin dialog-size($width, $height) {
+  width: $width;
+  height: $height;
+}

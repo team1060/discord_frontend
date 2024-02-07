@@ -1,0 +1,20 @@
+//_base.scss
+
+html {
+  font-size: $base-font-size;
+}
+
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+}
+
+strong,
+b {
+  font-weight: $heading-font-weight;
+}
+
+em,
+i {
+  font-style: italic;
+}

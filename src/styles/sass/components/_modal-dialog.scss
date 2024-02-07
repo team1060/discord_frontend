@@ -1,0 +1,5 @@
+// _modal-dialog.scss
+
+.modal-dialog {
+  @include dialog-size($modal-dialog-width, $modal-dialog-height);
+}

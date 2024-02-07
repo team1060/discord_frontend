@@ -1,0 +1,5 @@
+// _popout-dialog.scss
+
+.popout-dialog {
+  @include dialog-size($popout-dialog-width, $popout-dialog-height);
+}

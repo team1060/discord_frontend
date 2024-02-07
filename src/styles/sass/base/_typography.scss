@@ -1,0 +1,48 @@
+// _typography.scss
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $heading-font-weight;
+
+  small {
+    font-weight: normal;
+  }
+}
+
+h1,
+.h1 {
+  font-size: $heading-h1-size;
+
+  small {
+    font-size: $heading-h1-small-size;
+  }
+}
+
+h2,
+.h2 {
+  font-size: $heading-h2-size;
+}
+
+h3,
+.h3 {
+  font-size: $heading-h3-size;
+}
+
+h4,
+.h4 {
+  font-size: $heading-h4-size;
+}
+
+h5,
+.h5 {
+  font-size: $heading-h5-size;
+}
+
+h6,
+.h6 {
+  font-size: $heading-h6-size;
+}

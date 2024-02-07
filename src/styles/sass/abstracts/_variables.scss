@@ -1,0 +1,93 @@
+// _variables.scss
+
+// 폰트
+$base-font-family: 'Wanted';
+
+// 배경 색상
+$base-background-color: #1e1f22;
+$server-background-color: #313338;
+$server-background-hover-color: #5865f2;
+$chatroom-color: #2b2d31;
+$chatroom-active-color: #404249;
+$chatroom-hover-color: #404250;
+$voice-info-color: #232428;
+$voice-info-hover-color: #3d3e45;
+$chat-color: #313338;
+$chat-hover-color: #2e3035;
+$chat-input-color: #383a40;
+$chat-partner-color: #232428;
+$chat-partner-detail-color: #111214;
+
+// 버튼 색상
+$green-button-color: #23a55a;
+$green-button-hover-color: #1b6635;
+$red-button-color: #da373c;
+$red-button-hover-color: #a12828;
+$yellow-button-color: #f0b132;
+$yellow-button-hover-color: #d9a028;
+$blue-button-color: #4c57d2;
+$blue-button-hover-color: #4752c4;
+
+// 로고 및 아바타 색상
+$logo-background-color: #5865f2;
+$avatar-colors: (#d92a43, #e64939, #7aba5e, #473c88);
+
+// 폰트 색상
+$base-font-color: #ffffff;
+$chat-color: #ffffff;
+$chat-time-color: #949ba4;
+$chat-link-color: #00a1f6;
+$search-color: #949ba4;
+$emoji-color: #b5bac1;
+$emoji-hover-color: #dadde0;
+$username-color: #ffffff;
+$username-active-color: #949ba4;
+$username-active-hover-color: #dadde0;
+$username-logged-off-color: #4b4e53;
+$success-color: #2dc254;
+$loading-color: #f0b132;
+$error-color: #fa777c;
+
+// 폰트 크기
+$base-font-size: 16px;
+$base-font-weight: 500;
+$heading-font-weight: 700;
+$heading-h1-size: 28px;
+$heading-h1-small-size: 16px;
+$heading-h2-size: 20px;
+$heading-h3-size: 16px;
+$heading-h4-size: 16px;
+$heading-h5-size: 14px;
+$heading-h6-size: 12px;
+$chat-font-size: 16px;
+$chat-font-weight: 500;
+$chat-time-font-size: 14px;
+$chat-time-font-weight: 500;
+$search-font-size: 14px;
+$search-font-weight: 700;
+$username-font-size: 16px;
+$username-font-weight: 700;
+$voice-status-font-size: 16px;
+$voice-status-font-weight: 700;
+$user-popout-username-font-size: 20px;
+$user-popout-other-font-size: 14px;
+$user-info-username-font-size: 20px;
+$user-info-other-font-size: 14px;
+// Todo: 반응도 넣어야 함
+
+// 가로 길이 및 반응형 미디어 쿼리
+$min-width: 800px; // 최소 너비
+$server-pane-width: 72px; // 서버 패널 가로 길이
+$chatroom-pane-width: 240px; // 채팅방 패널 가로 길이
+$breakpoint: 1142px; // 반응형 미디어 쿼리
+$setting-sidebar-width: 220px; // 설정 창 사이드 바 가로 길이
+
+// 세로 길이
+$header-logo-height: 24px; // 헤더 로고 세로 길이
+$header-nav-height: 32px; // 헤더 네비게이션 바 세로 길이
+
+// 다이얼로그 크기
+$popout-dialog-width: 340px;
+$popout-dialog-height: 384px;
+$modal-dialog-width: 600px;
+$modal-dialog-height: 568px;

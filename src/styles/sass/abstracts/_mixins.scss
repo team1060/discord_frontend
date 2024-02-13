@@ -12,10 +12,11 @@
   height: $height;
 }
 
-// 로그인, 회원가입 폼 중앙 정렬
+// 로그인, 회원가입 폼 중앙 정렬 및 배경 색상
 @mixin form-properties {
   opacity: 1;
   transform: scale(1) translateY(0px) translateZ(0px);
+  background: $form-color;
 }
 
 // 전체 화면에 특정 테마를 적용

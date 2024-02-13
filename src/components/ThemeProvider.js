@@ -6,9 +6,9 @@ const ThemeProvider = props => {
 };
 
 ThemeProvider.propTypes = {
-  // prop을 문자열로 받아야 함을 선언
+  // theme를 문자열로 받아야 함을 선언
   theme: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([PropTypes.node])
 };
 
 export default ThemeProvider;

@@ -1,5 +1,5 @@
 const DirectMessagePage = () => {
-  return <></>;
+  return <></>
 };
 
 export default DirectMessagePage;

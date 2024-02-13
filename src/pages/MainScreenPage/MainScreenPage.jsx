@@ -1,5 +1,5 @@
 const MainScreenPage = () => {
-  return <></>;
+  return <>2</>;
 };
 
 export default MainScreenPage;

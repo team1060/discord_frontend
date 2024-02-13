@@ -4,7 +4,8 @@
 $base-font-family: 'Wanted';
 
 // 배경 색상
-$base-background-color: #1e1f22;
+$dark-background-color: #1e1f22;
+$primary-background-color: #5865f2;
 $server-background-color: #313338;
 $server-background-hover-color: #5865f2;
 $chatroom-color: #2b2d31;
@@ -17,6 +18,8 @@ $chat-hover-color: #2e3035;
 $chat-input-color: #383a40;
 $chat-partner-color: #232428;
 $chat-partner-detail-color: #111214;
+$form-color: #313338;
+$form-input-color: #1e1f22;
 
 // 버튼 색상
 $green-button-color: #23a55a;
@@ -28,8 +31,7 @@ $yellow-button-hover-color: #d9a028;
 $blue-button-color: #4c57d2;
 $blue-button-hover-color: #4752c4;
 
-// 로고 및 아바타 색상
-$logo-background-color: #5865f2;
+// 아바타 색상
 $avatar-colors: (#d92a43, #e64939, #7aba5e, #473c88);
 
 // 폰트 색상
@@ -47,12 +49,14 @@ $username-logged-off-color: #4b4e53;
 $success-color: #2dc254;
 $loading-color: #f0b132;
 $error-color: #fa777c;
+$label-color: #b5bac1;
+$input-color: #ffffff;
 
 // 폰트 크기
 $base-font-size: 16px;
 $base-font-weight: 500;
 $heading-font-weight: 700;
-$heading-h1-size: 28px;
+$heading-h1-size: 24px;
 $heading-h1-small-size: 16px;
 $heading-h2-size: 20px;
 $heading-h3-size: 16px;
@@ -73,6 +77,8 @@ $user-popout-username-font-size: 20px;
 $user-popout-other-font-size: 14px;
 $user-info-username-font-size: 20px;
 $user-info-other-font-size: 14px;
+$label-font-size: 12px;
+$input-font-size: 16px;
 // Todo: 반응도 넣어야 함
 
 // 가로 길이 및 반응형 미디어 쿼리
@@ -91,3 +97,9 @@ $popout-dialog-width: 340px;
 $popout-dialog-height: 384px;
 $modal-dialog-width: 600px;
 $modal-dialog-height: 568px;
+
+// 폼 크기
+$login-form-width: 480px;
+$login-form-height: 384px;
+$join-form-width: 480px;
+$join-form-height: 666px;

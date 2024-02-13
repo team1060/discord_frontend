@@ -1,0 +1,5 @@
+// _primary-theme.scss
+
+.primary-theme {
+  @include applyTheme($primary-background-color);
+}

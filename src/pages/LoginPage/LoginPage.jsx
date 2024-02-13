@@ -1,20 +1,44 @@
+import { Link } from 'react-router-dom';
+import Form from '../../components/Form';
+
 const LoginPage = () => {
+  const handleSubmit = () => {
+    console.log('submit');
+  };
   return (
     <div id="login-page">
       <div className="login-form">
-        <form method="post" action="/register" className="login-form">
-          <div className="login-page-inner">
-            <div>
+        <Form action="/register" className="wrapper" onSubmit={handleSubmit}>
+          <div className="inner">
+            <div className="login-header">
               <h1>돌아오신 것을 환영해요!</h1>
             </div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div className="input-section">
+              <label className="input-label">
+                이메일 또는 전화번호 <span className="required">*</span>
+              </label>
+              <input type="text" name="id" className="text-input"></input>
+            </div>
+            <div className="input-section-last">
+              <label className="input-label">
+                비밀번호 <span className="required">*</span>
+              </label>
+              <input type="password" name="password" className="password-input"></input>
+            </div>
+            <div>
+              <div className="link">비밀번호를 잊으셨나요?</div>
+            </div>
+            <div>
+              <button>로그인</button>
+            </div>
+            <div>
+              <span className="join-link">계정이 필요한가요?</span>
+              <Link to="/register" className="link">
+                가입하기
+              </Link>
+            </div>
           </div>
-          {/* <input type="text" name="user_id"></input>
-          <input type="password" name="password"></input>
-          <button type="submit">Create</button> */}
-        </form>
+        </Form>
       </div>
     </div>
   );

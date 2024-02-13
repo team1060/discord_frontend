@@ -1,0 +1,79 @@
+/* _forms.scss */
+
+/* 입력 필드 */
+input {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid $form-input-color;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: $form-input-color;
+  color: $input-color;
+}
+
+/* 버튼 */
+button {
+  width: 100%;
+  height: 44px;
+  margin-bottom: 8px;
+  padding: 2px 16px;
+  border: none;
+  background-color: $blue-button-color;
+  color: $base-font-color;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  &:hover {
+    background: $blue-button-hover-color;
+  }
+}
+
+/* 선택 요소 (셀렉트 박스 등) */
+select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* 라벨 */
+label {
+  display: block; /* 라벨을 블록 수준 요소로 만들어서 한 줄에 하나의 라벨이 표시되도록 함 */
+  margin-bottom: 8px;
+  font-size: $label-font-size;
+  color: $label-color;
+}
+
+/* 필수 조건 */
+.required {
+  color: $error-color;
+}
+
+/* 에러 메시지 */
+.error-message {
+  color: $error-color;
+}
+
+.wrapper {
+  padding: 32px;
+  .inner {
+    display: flex;
+    flex-direction: column;
+
+    .link {
+      color: $chat-link-color;
+      cursor: pointer;
+      padding: 2px 0;
+      margin: 4px 0 20px;
+      font-weight: 700;
+      font-size: $label-font-size;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,1 +1,53 @@
-/* JoinPage 스타일 파일 */ 
+/* JoinPage 스타일 파일 */
+/* LoginPage 스타일 파일 */
+#join-page {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+
+  .join-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .input-section {
+    margin-bottom: 20px;
+  }
+
+  .input-section-last {
+    margin-bottom: 60px;
+  }
+
+  .input-label-inner {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    &:nth-child(2) {
+      width: 35%;
+    }
+    .input-inner {
+      border-radius: 0;
+      border-end-start-radius: 4px;
+      border-start-start-radius: 4px;
+      padding: 2px 8px;
+    }
+    .selector {
+      align-items: center;
+      background: $form-input-color;
+      width: 28px;
+      height: 40px;
+      padding: 8px 8px 8px 0;
+      border-start-end-radius: 4px;
+      border-end-end-radius: 4px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .policy-agreement {
+    font-size: $label-font-size;
+    margin-bottom: 20px;
+  }
+}

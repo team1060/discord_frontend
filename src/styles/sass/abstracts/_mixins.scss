@@ -16,6 +16,7 @@
 @mixin form-properties {
   opacity: 1;
   transform: scale(1) translateY(0px) translateZ(0px);
+  border-radius: 4px;
   background: $form-color;
 }
 

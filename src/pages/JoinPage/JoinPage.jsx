@@ -1,15 +1,24 @@
 import { Link } from 'react-router-dom';
 import Form from '../../components/Form';
 import { GoChevronDown } from 'react-icons/go';
+import { apiRequest } from '../../api/request';
+import { API_URL } from '../../api/urls';
 
 const JoinPage = () => {
-  const handleSubmit = () => {
-    console.log('submit');
+  const handleSubmit = async (e) => {
+    e.preventDeFault();
+    const formData = new FormData(e.target);
+    try {
+      const response = await apiRequest.postFormData(API_URL.REGISTER_POST, formData);
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
   return (
     <div id="join-page">
       <div className="join-form">
-        <Form action="/join" className="wrapper" onSubmit={handleSubmit}>
+        <Form className="wrapper" onSubmit={handleSubmit}>
           <div className="inner">
             <div className="join-header">
               <h1>계정 만들기</h1>

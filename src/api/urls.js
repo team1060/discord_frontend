@@ -4,6 +4,9 @@ export const API_URL = {
   REFRESH: '/api/refresh',
   LOGOUT: '/api/logout',
   LOGIN: '/api/login',
+  EMAIL_PUT: '/api/email',
+  EMAIL_POST: '/api/email',
+  EMAIL_GET: tokenLink => `/api/email/${tokenLink}`
 };
 
 // 토큰 필요 없는 URL

@@ -3,18 +3,44 @@ import Form from '../../components/Form';
 import { GoChevronDown } from 'react-icons/go';
 import { apiRequest } from '../../api/request';
 import { API_URL } from '../../api/urls';
+import { useEffect, useState } from 'react';
 
 const JoinPage = () => {
-  const handleSubmit = async (e) => {
-    e.preventDeFault();
-    const formData = new FormData(e.target);
-    try {
-      const response = await apiRequest.postFormData(API_URL.REGISTER_POST, formData);
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
+  const [email, setEmail] = useState('');
+  const [nickname, setNickname] = useState('');
+  const [user_hash, setUserHash] = useState('');
+  const [password, setPassword] = useState('');
+  const [birth, setBirth] = useState('');
+
+  const [year, setYear] = useState('');
+  const [month, setMonth] = useState('');
+  const [day, setDay] = useState('');
+
+  const handleSubmit = async () => {
+    const validity =
+      email && nickname && user_hash && password && birth;
+      // true;
+    if (validity) {
+      const formData = new FormData();
+
+      formData.append('email', email);
+      formData.append('nickname', nickname);
+      formData.append('user_hash', user_hash);
+      formData.append('password', password);
+      formData.append('birth', birth);
+      try {
+        const response = await apiRequest.postFormData(API_URL.REGISTER_POST, formData);
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    } else {
+      console.log('미입력 있음');
     }
   };
+  useEffect(() => {
+    setBirth(year + '/' + month + '/' + day);
+  }, [year, month, day]);
   return (
     <div id="join-page">
       <div className="join-form">
@@ -27,23 +53,43 @@ const JoinPage = () => {
               <label className="input-label">
                 이메일 <span className="required">*</span>
               </label>
-              <input type="text" name="id" className="text-input"></input>
+              <input
+                type="text"
+                name="email"
+                id="email"
+                onChange={(e) => setEmail(e.target.value)}
+                className="text-input"></input>
             </div>
             <div className="input-section">
               <label className="input-label">별명</label>
-              <input type="text" name="id" className="text-input"></input>
+              <input
+                type="text"
+                name="nickname"
+                id="nickname"
+                onChange={(e) => setNickname(e.target.value)}
+                className="text-input"></input>
             </div>
             <div className="input-section">
               <label className="input-label">
                 사용자명 <span className="required">*</span>
               </label>
-              <input type="text" name="id" className="text-input"></input>
+              <input
+                type="text"
+                name="user_hash"
+                id="user_hash"
+                onChange={(e) => setUserHash(e.target.value)}
+                className="text-input"></input>
             </div>
             <div className="input-section">
               <label className="input-label">
                 비밀번호 <span className="required">*</span>
               </label>
-              <input type="password" name="password" className="password-input"></input>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                onChange={(e) => setPassword(e.target.value)}
+                className="password-input"></input>
             </div>
             <div className="input-section-last">
               <fieldset>
@@ -53,7 +99,13 @@ const JoinPage = () => {
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                   <div className="input-label-inner">
                     <div>
-                      <input type="text" name="text" placeholder="년" className="input-inner"></input>
+                      <input
+                        type="text"
+                        name="year"
+                        id="year"
+                        onChange={(e) => setYear(e.target.value)}
+                        placeholder="년"
+                        className="input-inner"></input>
                     </div>
                     <div className="selector">
                       <GoChevronDown />
@@ -61,7 +113,13 @@ const JoinPage = () => {
                   </div>
                   <div className="input-label-inner">
                     <div>
-                      <input type="text" name="text" placeholder="월" className="input-inner"></input>
+                      <input
+                        type="text"
+                        name="month"
+                        id="month"
+                        onChange={(e) => setMonth(e.target.value)}
+                        placeholder="월"
+                        className="input-inner"></input>
                     </div>
                     <div className="selector">
                       <GoChevronDown />
@@ -69,7 +127,13 @@ const JoinPage = () => {
                   </div>
                   <div className="input-label-inner">
                     <div>
-                      <input type="text" name="text" placeholder="일" className="input-inner"></input>
+                      <input
+                        type="text"
+                        name="day"
+                        id="day"
+                        onChange={(e) => setDay(e.target.value)}
+                        placeholder="일"
+                        className="input-inner"></input>
                     </div>
                     <div className="selector">
                       <GoChevronDown />

@@ -9,7 +9,8 @@ const LoginPage = () => {
   const [password, setPassword] = useState('');
 
   const handleSubmit = async () => {
-    if (email && password) {
+    const validity = email && password;
+    if (validity) {
       const formData = new FormData();
 
       formData.append('email', email);

@@ -1,14 +1,24 @@
 import { Link } from 'react-router-dom';
 import Form from '../../components/Form';
+import { apiRequest } from '../../api/request';
+import { API_URL } from '../../api/urls';
 
 const LoginPage = () => {
-  const handleSubmit = () => {
-    console.log('submit');
+  const handleSubmit = async (event) => {
+    event?.preventDefault();
+    const formData = new FormData(event?.target);
+    try {
+      const response = await apiRequest.postFormData(API_URL.LOGIN, formData);
+      console.log('123');
+      console.log(response?.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
   return (
     <div id="login-page">
       <div className="login-form">
-        <Form action="/register" className="wrapper" onSubmit={handleSubmit}>
+        <Form className="wrapper" onSubmit={handleSubmit}>
           <div className="inner">
             <div className="login-header">
               <h1>돌아오신 것을 환영해요!</h1>
@@ -17,7 +27,7 @@ const LoginPage = () => {
               <label className="input-label">
                 이메일 또는 전화번호 <span className="required">*</span>
               </label>
-              <input type="text" name="id" className="text-input"></input>
+              <input type="text" name="email" className="text-input"></input>
             </div>
             <div className="input-section-last">
               <label className="input-label">

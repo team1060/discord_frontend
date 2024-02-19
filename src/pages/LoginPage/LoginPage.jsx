@@ -86,6 +86,30 @@ const LoginPage = () => {
     }
   };
 
+  const handlePasswordRecovery = async () => {
+    if (!email) {
+      setEmailLabel('이메일 - 필수 입력 칸이에요.');
+      setEmailInputClass('input-label-invalid');
+      return false;
+    }
+    try {
+      const response = await apiRequest.post(API_URL.EMAIL_POST, { email: email });
+      console.log(response.data);
+      
+      setEmailLabel('이메일');
+      setEmailInputClass('text-input');
+      return true;
+    } catch (error) {
+      if (error.response && error.response.status === 404) {
+        setEmailLabel('이메일 - 존재하지 않는 이메일입니다.');
+        setEmailInputClass('input-label-invalid');
+      } else {
+        console.error(error);
+      }
+      return false;
+    }
+  };
+
   return (
     <div id="login-page">
       <div className="login-form">
@@ -117,7 +141,9 @@ const LoginPage = () => {
                 className="password-input"></input>
             </div>
             <div>
-              <div className="link">비밀번호를 잊으셨나요?</div>
+              <div className="link" onClick={handlePasswordRecovery}>
+                비밀번호를 잊으셨나요?
+              </div>
             </div>
             <div>
               <button>로그인</button>

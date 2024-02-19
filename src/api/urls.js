@@ -13,7 +13,7 @@ export const API_URL = {
 };
 
 // 토큰 필요 없는 URL
-export const HEADER_NOT_REQUIRED_TOKEN_URLS = [API_URL.LOGIN, API_URL.REGISTER_POST];
+export const HEADER_NOT_REQUIRED_TOKEN_URLS = [API_URL.LOGIN, API_URL.REGISTER_POST, API_URL.EMAIL_POST];
 
 // Form data로 전송 필요한 URL
 export const FORM_DATA_REQUIRED_URLS = [];

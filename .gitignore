@@ -23,4 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # bat
-mkdirNewPage.bat
+bat_mkdir_new_page.bat
+# bat_env_file_create.bat

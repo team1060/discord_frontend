@@ -6,7 +6,10 @@ export const API_URL = {
   LOGIN: '/api/login',
   EMAIL_PUT: '/api/email',
   EMAIL_POST: '/api/email',
-  EMAIL_GET: tokenLink => `/api/email/${tokenLink}`
+  EMAIL_GET: (tokenLink) => `/api/email/${tokenLink}`,
+  USER_CHANGEPW: '/api/user/changepw',
+  USER_CHANGENICKNAME: '/api/user/changenickname',
+  USER_PROFILE_IMG: '/api/user/profile/img',
 };
 
 // 토큰 필요 없는 URL

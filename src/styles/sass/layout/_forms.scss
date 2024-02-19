@@ -46,6 +46,13 @@ label {
   font-size: $label-font-size;
   color: $label-color;
 }
+.input-label {
+  color: inherit;
+}
+
+.input-label-invalid {
+  color: $error-color;
+}
 
 /* 필수 조건 */
 .required {

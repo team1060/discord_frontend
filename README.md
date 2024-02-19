@@ -1,5 +1,21 @@
 # discord_frontend
 
+## 사용법
+
+### 로컬 실행 방법
+
+<h4>프로젝트 레파지토리 클론</h4>
+<pre>$ git clone https://github.com/team1060/discord_frontend.git</pre>
+
+<h4>최신 변경사항 로컬에 반영</h4>
+<pre>$ git remote update</pre>
+
+<h4>.env 등 배치 파일 실행</h4>
+<pre>bat_env_file_create.bat</pre>
+
+<h4>프로젝트 패키지 설치 및 실행</h4>
+<pre>npm install, npm start</pre>
+
 ## 커밋 스타일
 
 | 작업 유형 | 설명                                  |

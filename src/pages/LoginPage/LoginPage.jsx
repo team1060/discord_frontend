@@ -18,29 +18,16 @@ const LoginPage = () => {
   const [passwordInputClass, setPasswordInputClass] = useState('input-label');
 
   const handleSubmit = async () => {
-    const checkEmailDuplicate = async (email) => {
+    const checkEmailDuplicate = (email) => {
       if (!email.trim()) {
         setEmailLabel('이메일 - 이메일은 필수 입력 값입니다.');
         setEmailInputClass('input-label-invalid');
         return false;
       }
-      try {
-        const response = await apiRequest.get(API_URL.REGISTER_GET, { params: { email } });
-        console.log(response.data);
-        const members = response.data;
-
-        // 이메일이 중복되는지 확인
-        const isDuplicate = members.some((member) => member.email === email);
-        if (isDuplicate) {
-          setEmailLabel('이메일 - 이미 등록된 이메일입니다.');
-          setEmailInputClass('input-label-invalid');
-          return false; // 유효성 검사 실패
-        }
-        setEmailLabel('이메일');
-        setEmailInputClass('text-input');
-        return true;
-      } catch (error) {
-        console.error(error);
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!regex.test(email)) {
+        setEmailLabel('이메일 - 이메일 형식이 올바르지 않습니다.');
+        setEmailInputClass('input-label-invalid');
         return false;
       }
     };
@@ -59,16 +46,14 @@ const LoginPage = () => {
       }
     };
 
-    const isEmailDuplicate = await checkEmailDuplicate(email);
+    const isEmailDuplicate = checkEmailDuplicate(email);
     const isPasswordDuplicate = checkPasswordDuplicate(password);
 
     if (!isEmailDuplicate) {
-      console.log('이메일이 중복되었습니다.');
-      return;
+      console.log('유효하지 않은 이메일입니다.');
     }
     if (!isPasswordDuplicate) {
       console.log('올바르지 않은 비밀번호입니다.');
-      return;
     }
 
     const formData = new FormData();
@@ -82,7 +67,15 @@ const LoginPage = () => {
 
       navigate(PATH.MAIN_SCREEN);
     } catch (error) {
-      console.error(error);
+      if (error.response && error.response.status === 500) {
+        setEmailLabel('이메일 - 유효하지 않은 아이디 또는 비밀번호입니다.');
+        setEmailInputClass('input-label-invalid');
+        setPasswordLabel('비밀번호 - 유효하지 않은 아이디 또는 비밀번호입니다.');
+        setPasswordInputClass('input-label-invalid');
+      } else {
+        console.error(error);
+      }
+      return false;
     }
   };
 
@@ -95,14 +88,18 @@ const LoginPage = () => {
     try {
       const response = await apiRequest.post(API_URL.EMAIL_POST, { email: email });
       console.log(response.data);
-      
+
       setEmailLabel('이메일');
       setEmailInputClass('text-input');
+      setPasswordLabel('비밀번호');
+      setPasswordInputClass('text-input');
       return true;
     } catch (error) {
       if (error.response && error.response.status === 404) {
         setEmailLabel('이메일 - 존재하지 않는 이메일입니다.');
         setEmailInputClass('input-label-invalid');
+        setPasswordLabel('비밀번호');
+        setPasswordInputClass('text-input');
       } else {
         console.error(error);
       }

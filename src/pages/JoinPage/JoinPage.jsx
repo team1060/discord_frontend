@@ -192,7 +192,9 @@ const JoinPage = () => {
 
       try {
         const response = await apiRequest.postFormData(API_URL.LOGIN, loginFormData);
-        console.log(response.data);
+        const { token } = response.data;
+
+        localStorage.setItem('jwt', token);
 
         navigate(PATH.MAIN_SCREEN);
       } catch (error) {
@@ -311,7 +313,7 @@ const JoinPage = () => {
               </fieldset>
             </div>
             <div>
-              <button>계속하기</button>
+              <button className="button-full-width">계속하기</button>
             </div>
             <div className="policy-agreement">
               <span>등록하는 순간 Discord의 </span>

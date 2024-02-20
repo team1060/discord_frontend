@@ -13,8 +13,11 @@ input {
 }
 
 /* 버튼 */
-button {
+.button-full-width {
   width: 100%;
+}
+
+button {
   height: 44px;
   margin-bottom: 8px;
   padding: 2px 16px;

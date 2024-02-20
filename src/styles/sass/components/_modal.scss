@@ -1,0 +1,30 @@
+/* modal.scss */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* 전체 화면의 너비 */
+  height: 100%; /* 전체 화면의 높이 */
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  @include dialog-size($modal-password-width, $modal-password-height);
+  background-color: $form-color;
+  border-radius: 5px;
+}
+
+.modal-close-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+}
+
+.modal-close {
+  padding: 2px 16px;
+  width: 64px;
+  height: 34px;
+}

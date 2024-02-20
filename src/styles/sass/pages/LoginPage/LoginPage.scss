@@ -19,4 +19,15 @@
     font-size: $label-font-size;
     margin-right: 8px;
   }
+
+  .modal-wrapper {
+    height: 130px;
+  }
+  .modal-header {
+    padding: 16px;
+  }
+
+  .modal-content {
+    padding: 5px 2px 20px 16px;
+  }
 }

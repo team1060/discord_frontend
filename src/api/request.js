@@ -55,6 +55,6 @@ export const apiRequest = {
   patch: (url, data) => request.patch(url, data),
   putFormData: (url, formData) => request.put(url, formData),
   put: (url, data) => request.put(url, data),
-  
+
   delete: (url, data) => request.delete(url, data),
 };

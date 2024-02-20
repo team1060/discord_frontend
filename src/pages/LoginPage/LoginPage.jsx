@@ -4,6 +4,7 @@ import { apiRequest } from '../../api/request';
 import { API_URL } from '../../api/urls';
 import { useState } from 'react';
 import { PATH } from '../../utils/paths/paths';
+import Modal from '../../components/Modal';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -93,6 +94,7 @@ const LoginPage = () => {
       setEmailInputClass('text-input');
       setPasswordLabel('비밀번호');
       setPasswordInputClass('text-input');
+      setModalOpen(true);
       return true;
     } catch (error) {
       if (error.response && error.response.status === 404) {
@@ -107,6 +109,11 @@ const LoginPage = () => {
     }
   };
 
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
   return (
     <div id="login-page">
       <div className="login-form">
@@ -143,7 +150,7 @@ const LoginPage = () => {
               </div>
             </div>
             <div>
-              <button>로그인</button>
+              <button className="button-full-width">로그인</button>
             </div>
             <div>
               <span className="join-link">계정이 필요한가요?</span>
@@ -154,6 +161,18 @@ const LoginPage = () => {
           </div>
         </Form>
       </div>
+      <Modal isOpen={modalOpen} onClose={handleCloseModal}>
+        <div className="modal-header">
+          <h2>지시사항 이메일로 전송 완료</h2>
+        </div>
+        <div className="modal-content">
+          <p>
+            계정 비밀번호 변경 방법을
+            <strong>{email}</strong>
+            (으)로 보냈어요. 받은 편지함 또는 스팸함을 확인해주세요.
+          </p>
+        </div>
+      </Modal>
     </div>
   );
 };

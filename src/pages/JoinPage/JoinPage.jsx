@@ -198,8 +198,6 @@ const JoinPage = () => {
       } catch (error) {
         console.error(error);
       }
-
-      // 데이터 처리 후 로그인 페이지로 이동
     } catch (error) {
       console.error(error);
     }

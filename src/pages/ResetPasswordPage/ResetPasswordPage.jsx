@@ -1,16 +1,17 @@
 import Form from '../../components/Form';
-import { useNavigate } from 'react-router-dom';
-import { PATH } from '../../utils/paths/paths';
 import { useEffect, useState } from 'react';
 import { apiRequest } from '../../api/request';
 import { API_URL } from '../../api/urls';
 import { jwtDecode } from 'jwt-decode';
-const ResetPasswordPage = () => {
-  const navigate = useNavigate();
+import { login } from '../../api/hooks/login';
+import { PATH } from '../../utils/paths/paths';
+import { useNavigate } from 'react-router-dom';
 
+const ResetPasswordPage = () => {
   const hash = window.location.hash;
   const token = new URLSearchParams(hash.substring(1)).get('token');
 
+  const navigate = useNavigate;
   const [email, setEmail] = useState('');
 
   const [password, setPassword] = useState('');
@@ -58,15 +59,8 @@ const ResetPasswordPage = () => {
       const response = await apiRequest.putFormData(API_URL.EMAIL_PUT, resetPasswordFormData);
       console.log(response.data);
 
-      const loginFormData = new FormData();
-
-      loginFormData.append('email', email);
-      loginFormData.append('password', password);
-
       try {
-        const response = await apiRequest.postFormData(API_URL.LOGIN, loginFormData);
-        console.log(response.data);
-
+        await login(email, password);
         navigate(PATH.MAIN_SCREEN);
       } catch (error) {
         console.error(error);
@@ -81,7 +75,7 @@ const ResetPasswordPage = () => {
         <Form className="wrapper" onSubmit={handleSubmit}>
           <div className="inner">
             <div className="reset-header">
-              <img src='https://via.placeholder.com/171x84' alt='비밀번호 변경하기'></img>
+              <img src="https://via.placeholder.com/171x84" alt="비밀번호 변경하기"></img>
               <h1>비밀번호 변경하기</h1>
             </div>
             <div className="input-section">

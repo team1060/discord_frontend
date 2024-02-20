@@ -5,6 +5,7 @@ import { API_URL } from '../../api/urls';
 import { useState } from 'react';
 import { PATH } from '../../utils/paths/paths';
 import Modal from '../../components/Modal';
+import { login } from '../../api/hooks/login';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -57,15 +58,8 @@ const LoginPage = () => {
       console.log('올바르지 않은 비밀번호입니다.');
     }
 
-    const formData = new FormData();
-
-    formData.append('email', email);
-    formData.append('password', password);
-
     try {
-      const response = await apiRequest.postFormData(API_URL.LOGIN, formData);
-      console.log(response.data);
-
+      await login(email, password);
       navigate(PATH.MAIN_SCREEN);
     } catch (error) {
       if (error.response && error.response.status === 500) {

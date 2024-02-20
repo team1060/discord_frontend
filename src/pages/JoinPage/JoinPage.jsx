@@ -5,6 +5,7 @@ import { apiRequest } from '../../api/request';
 import { API_URL } from '../../api/urls';
 import { useEffect, useState } from 'react';
 import { PATH } from '../../utils/paths/paths';
+import { login } from '../../api/hooks/login';
 
 const JoinPage = () => {
   const navigate = useNavigate();
@@ -185,17 +186,8 @@ const JoinPage = () => {
       const response = await apiRequest.postFormData(API_URL.REGISTER_POST, registerFormData);
       console.log(response.data);
 
-      const loginFormData = new FormData();
-
-      loginFormData.append('email', email);
-      loginFormData.append('password', password);
-
       try {
-        const response = await apiRequest.postFormData(API_URL.LOGIN, loginFormData);
-        const { token } = response.data;
-
-        localStorage.setItem('jwt', token);
-
+        await login(email, password);
         navigate(PATH.MAIN_SCREEN);
       } catch (error) {
         console.error(error);

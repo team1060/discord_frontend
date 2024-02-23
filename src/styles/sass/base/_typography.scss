@@ -7,17 +7,12 @@ h4,
 h5,
 h6 {
   font-weight: $heading-font-weight;
-
-  small {
-    font-weight: normal;
-  }
 }
 
 h1,
 .h1 {
   font-size: $heading-h1-size;
-  height: 30px;
-  small {
+  &.small {
     font-size: $heading-h1-small-size;
   }
 }

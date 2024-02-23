@@ -1,1 +1,52 @@
-/* MainScreenPage 스타일 파일 */ 
+/* MainScreenPage 스타일 파일 */
+.header {
+  height: 20px;
+
+  .header-logo {
+    padding: 3px 7px;
+  }
+}
+
+.main {
+  display: flex;
+  height: calc(100% - 20px);
+
+  header {
+    height: $main-header;
+  }
+  .nav-server {
+    width: $server-pane-width;
+    height: 100%;
+  }
+
+  .chatroom-wrap {
+    display: flex;
+    width: calc(100% - $server-pane-width);
+  }
+  .nav-chatroom {
+    width: $chatroom-pane-width;
+
+    .nav-article {
+      height: calc(100% - $main-header - $chatroom-footer-height);
+    }
+    .nav-footer {
+      height: calc(91px + 53px);
+    }
+  }
+
+  .section {
+    width: calc(100% - $chatroom-pane-width);
+  }
+  .chat-title {
+    display: flex;
+    justify-content: flex-end;
+
+    .section-article {
+      width: calc(100% - $chatroom-member-width);
+    }
+    .section-aside {
+      width: $chatroom-member-width;
+      // width: 240px;
+    }
+  }
+}

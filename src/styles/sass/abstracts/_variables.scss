@@ -57,7 +57,7 @@ $base-font-size: 16px;
 $base-font-weight: 500;
 $heading-font-weight: 700;
 $heading-h1-size: 24px;
-$heading-h1-small-size: 16px;
+$heading-h1-small-size: 14px;
 $heading-h2-size: 20px;
 $heading-h3-size: 16px;
 $heading-h4-size: 16px;
@@ -83,8 +83,11 @@ $input-font-size: 16px;
 
 // 가로 길이 및 반응형 미디어 쿼리
 $min-width: 800px; // 최소 너비
+$main-header: 32px;
 $server-pane-width: 72px; // 서버 패널 가로 길이
 $chatroom-pane-width: 240px; // 채팅방 패널 가로 길이
+$chatroom-footer-height: 144px;
+$chatroom-member-width: 340px; // 채팅방 멤버 가로 길이
 $breakpoint: 1142px; // 반응형 미디어 쿼리
 $setting-sidebar-width: 220px; // 설정 창 사이드 바 가로 길이
 

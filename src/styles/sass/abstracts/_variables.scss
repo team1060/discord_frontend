@@ -13,7 +13,7 @@ $chatroom-active-color: #404249;
 $chatroom-hover-color: #404250;
 $voice-info-color: #232428;
 $voice-info-hover-color: #3d3e45;
-$chat-color: #313338;
+$chat-background-color: #313338;
 $chat-hover-color: #2e3035;
 $chat-input-color: #383a40;
 $chat-partner-color: #232428;
@@ -33,6 +33,10 @@ $blue-button-hover-color: #4752c4;
 
 // 아바타 색상
 $avatar-colors: (#d92a43, #e64939, #7aba5e, #473c88);
+
+// border 색상
+$header-border-color: 1px solid #111214;
+$voice-border-color: 0.5px solid #949ba4;
 
 // 폰트 색상
 $base-font-color: #ffffff;
@@ -57,7 +61,7 @@ $base-font-size: 16px;
 $base-font-weight: 500;
 $heading-font-weight: 700;
 $heading-h1-size: 24px;
-$heading-h1-small-size: 14px;
+$heading-h1-small-size: 16px;
 $heading-h2-size: 20px;
 $heading-h3-size: 16px;
 $heading-h4-size: 16px;
@@ -83,11 +87,15 @@ $input-font-size: 16px;
 
 // 가로 길이 및 반응형 미디어 쿼리
 $min-width: 800px; // 최소 너비
-$main-header: 32px;
+$header-height: 24px; // 전체 헤더 세로 길이
+$main-header-height: 48px; // 메인 헤더 세로길이
 $server-pane-width: 72px; // 서버 패널 가로 길이
 $chatroom-pane-width: 240px; // 채팅방 패널 가로 길이
-$chatroom-footer-height: 144px;
-$chatroom-member-width: 340px; // 채팅방 멤버 가로 길이
+$chatroom-footer-wrapper-height: 91px; // 푸터 윗부분 길이
+$chatroom-footer-container-height: 53px; // 푸터 아랫부분 길이
+$chatroom-footer-height: $chatroom-footer-wrapper-height + $chatroom-footer-container-height; // 푸터 전체 길이
+$chatroom-member-width: 240px; // 채팅방 멤버 가로 길이
+$chatroom-profile-width: 340px; // 채팅방 프로필 판넬 길이
 $breakpoint: 1142px; // 반응형 미디어 쿼리
 $setting-sidebar-width: 220px; // 설정 창 사이드 바 가로 길이
 

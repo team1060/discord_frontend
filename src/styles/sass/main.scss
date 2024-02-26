@@ -1,16 +1,30 @@
-// Abstracts
+/* Abstracts 
+
+@import 'abstracts/';
+
+*/
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
 @import 'abstracts/functions';
 @import 'abstracts/placeholders';
 
-// Base
+/* Base 
+
+@import 'base/';
+
+*/
 @import 'base/base';
 @import 'base/reset';
 @import 'base/typography';
 @import 'base/animations';
 
-// Layout
+/* Layout 
+
+@import 'layout/';
+
+*/
+@import 'layout/base-layout';
+@import 'layout/server-nav-layout';
 @import 'layout/grid';
 @import 'layout/header';
 @import 'layout/footer';
@@ -18,7 +32,11 @@
 @import 'layout/forms';
 @import 'layout/navigation';
 
-// Components
+/* Components 
+
+@import 'components/';
+
+*/
 @import 'components/buttons';
 @import 'components/carousel';
 @import 'components/join-form';
@@ -30,14 +48,22 @@
 @import 'components/reset-password-form';
 @import 'components/thumbnails';
 
-// Pages
-@import 'pages/DirectMessagePage/DirectMessagePage.scss';
-@import 'pages/JoinPage/JoinPage.scss';
-@import 'pages/LoginPage/LoginPage.scss';
-@import 'pages/MainScreenPage/MainScreenPage.scss';
-@import 'pages/ResetPasswordPage/ResetPasswordPage.scss';
-@import 'pages/ServerChannelPage/ServerChannelPage.scss';
+/* Pages 
 
-// Themes
+@import 'pages/';
+
+*/
+@import 'pages/DirectMessagePage.scss';
+@import 'pages/JoinPage.scss';
+@import 'pages/LoginPage.scss';
+@import 'pages/MainScreenPage.scss';
+@import 'pages/ResetPasswordPage.scss';
+@import 'pages/ServerChannelPage.scss';
+
+/* Themes
+
+@import 'themes/';
+
+*/
 @import 'themes/dark-theme';
 @import 'themes/primary-theme';

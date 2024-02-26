@@ -1,4 +1,4 @@
-/* BaseLayout 스타일 파일 */
+/* _base-layout 스타일 파일 */
 #layout {
   width: 100%;
   height: 100%;
@@ -35,6 +35,7 @@
     .nav-chatroom {
       width: $chatroom-pane-width;
       background: $chatroom-color;
+      border-radius: 8px 0 0 0;
 
       .nav-article {
         height: calc(100% - $main-header-height - $chatroom-footer-height);

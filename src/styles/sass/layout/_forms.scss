@@ -1,4 +1,4 @@
-/* _forms.scss */
+/* _forms 스타일 파일 */
 
 /* 입력 필드 */
 input {
@@ -67,7 +67,7 @@ label {
   color: $error-color;
 }
 
-.wrapper {
+form.wrapper {
   padding: 32px;
   .inner {
     display: flex;

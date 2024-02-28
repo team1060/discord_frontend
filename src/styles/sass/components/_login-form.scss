@@ -1,6 +1,5 @@
 // _login-form.scss
 
 .login-form {
-  @include form-properties;
-  @include form-size($login-form-width, $login-form-height);
+  @include form-styles($login-form-width, $login-form-height);
 }

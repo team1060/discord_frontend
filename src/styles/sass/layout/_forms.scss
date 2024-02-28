@@ -1,5 +1,10 @@
 /* _forms 스타일 파일 */
 
+@mixin form-styles($width, $height) {
+  @include form-properties;
+  @include form-size($width, $height);
+}
+
 /* 입력 필드 */
 input {
   width: 100%;
@@ -10,26 +15,6 @@ input {
   box-sizing: border-box;
   background-color: $form-input-color;
   color: $input-color;
-}
-
-/* 버튼 */
-.button-full-width {
-  width: 100%;
-}
-
-button {
-  height: 44px;
-  margin-bottom: 8px;
-  padding: 2px 16px;
-  border: none;
-  background-color: $blue-button-color;
-  color: $base-font-color;
-  border-radius: 4px;
-  font-weight: 700;
-  cursor: pointer;
-  &:hover {
-    background: $blue-button-hover-color;
-  }
 }
 
 /* 선택 요소 (셀렉트 박스 등) */

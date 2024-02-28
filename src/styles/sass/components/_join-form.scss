@@ -1,6 +1,5 @@
 // _register-form.scss
 
 .join-form {
-  @include form-properties;
-  @include form-size($join-form-width, $join-form-height);
+  @include form-styles($join-form-width, $join-form-height);
 }

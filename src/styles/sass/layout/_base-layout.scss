@@ -17,12 +17,11 @@
     min-width: $min-width;
     header {
       height: $main-header-height;
-      padding: 8px;
       border-bottom: $header-border-color;
       box-sizing: border-box;
     }
 
-    .nav-server {
+    .server-nav {
       width: $server-pane-width;
       height: 100%;
     }
@@ -36,6 +35,10 @@
       width: $chatroom-pane-width;
       background: $chatroom-color;
       border-radius: 8px 0 0 0;
+
+      .nav-header {
+        padding: 0 10px;
+      }
 
       .nav-article {
         height: calc(100% - $main-header-height - $chatroom-footer-height);

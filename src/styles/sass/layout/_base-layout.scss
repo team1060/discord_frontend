@@ -1,0 +1,96 @@
+/* _base-layout 스타일 파일 */
+#layout {
+  width: 100%;
+  height: 100%;
+
+  .header {
+    height: $header-height;
+
+    .header-logo {
+      padding: 4px 16px;
+    }
+  }
+
+  .main {
+    display: flex;
+    height: calc(100% - $header-height);
+    min-width: $min-width;
+    header {
+      height: $main-header-height;
+      padding: 8px;
+      border-bottom: $header-border-color;
+      box-sizing: border-box;
+    }
+
+    .nav-server {
+      width: $server-pane-width;
+      height: 100%;
+    }
+
+    .chatroom-wrap {
+      display: flex;
+      width: calc(100% - $server-pane-width);
+    }
+
+    .nav-chatroom {
+      width: $chatroom-pane-width;
+      background: $chatroom-color;
+      border-radius: 8px 0 0 0;
+
+      .nav-article {
+        height: calc(100% - $main-header-height - $chatroom-footer-height);
+      }
+
+      .nav-footer {
+        height: $chatroom-footer-height;
+        background: $voice-info-color;
+
+        .nav-footer-wrapper {
+          height: $chatroom-footer-wrapper-height;
+          border-bottom: $voice-border-color;
+          box-sizing: border-box;
+        }
+
+        .nav-footer-container {
+          height: $chatroom-footer-container-height;
+        }
+      }
+    }
+
+    .section {
+      width: calc(100% - $chatroom-pane-width);
+      background-color: $chat-background-color;
+    }
+
+    .chat-title {
+      display: flex;
+      justify-content: flex-end;
+      height: calc(100% - $main-header-height);
+
+      .section-article {
+        width: calc(100% - $chatroom-member-width);
+      }
+
+      .section-aside {
+        background-color: $chat-partner-color;
+      }
+    }
+  }
+}
+
+@media (min-width: 1142px) {
+  #layout .main .section-aside {
+    display: block;
+  }
+}
+
+// MAIN_SCREEN과 SERVER_CHANNEL에서 .section-aside의 너비를 240px로 설정
+#main-screen #layout .main .section-aside,
+#server-channel #layout .main .section-aside {
+  width: $chatroom-member-width;
+}
+
+// DIRECT_MESSAGE에서 .section-aside의 너비를 340px로 설정
+#direct-message #layout .main .section-aside {
+  width: $chatroom-profile-width;
+}

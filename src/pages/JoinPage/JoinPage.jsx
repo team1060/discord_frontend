@@ -5,6 +5,7 @@ import { apiRequest } from '../../api/request';
 import { API_URL } from '../../api/urls';
 import { useEffect, useState } from 'react';
 import { PATH } from '../../utils/paths/paths';
+import { login } from '../../api/hooks/login';
 
 const JoinPage = () => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ const JoinPage = () => {
   // form의 입력 값
   const [email, setEmail] = useState('');
   const [nickname, setNickname] = useState('');
-  const [user_hash, setUserHash] = useState('');
+  const [userHash, setUserHash] = useState('');
   const [password, setPassword] = useState('');
   const [birth, setBirth] = useState('');
 
@@ -46,55 +47,17 @@ const JoinPage = () => {
         setEmailInputClass('input-label-invalid');
         return false;
       }
-      try {
-        const response = await apiRequest.get(API_URL.REGISTER_GET, { params: { email } });
-        console.log(response.data);
-        const members = response.data;
-
-        // 이메일이 중복되는지 확인
-        const isDuplicate = members.some((member) => member.email === email);
-        if (isDuplicate) {
-          setEmailLabel('이메일 - 이미 등록된 이메일입니다.');
-          setEmailInputClass('input-label-invalid');
-          return false; // 유효성 검사 실패
-        }
-        setEmailLabel('이메일');
-        setEmailInputClass('text-input');
-        return true;
-      } catch (error) {
-        console.error(error);
-        return false;
-      }
     };
 
-    const checkUserHashDuplicate = async (user_hash) => {
-      if (!user_hash.trim()) {
+    const checkUserHashDuplicate = async (userHash) => {
+      if (!userHash.trim()) {
         setUserHashLabel('사용자명 - 사용자명은 필수 입력 값입니다.');
         setUserHashInputClass('input-label-invalid');
         return false;
       }
-      if (user_hash.length < 2 || user_hash.length > 32) {
+      if (userHash.length < 2 || userHash.length > 32) {
         setUserHashLabel('사용자명 - 2~32자 이내의 값을 입력해주세요.');
         setUserHashInputClass('input-label-invalid');
-        return false;
-      }
-      try {
-        const response = await apiRequest.get(API_URL.REGISTER_GET, { params: { user_hash } });
-        console.log(response.data);
-        const members = response.data;
-
-        // 사용자명이 중복되는지 확인
-        const isDuplicate = members.some((member) => member.user_hash === user_hash);
-        if (isDuplicate) {
-          setUserHashLabel('사용자명 - 사용할 수 없거나 중복된 사용자명입니다.');
-          setUserHashInputClass('input-label-invalid');
-          return false; //
-        }
-        setUserHashLabel('사용자명');
-        setUserHashInputClass('text-input');
-        return true;
-      } catch (error) {
-        console.error(error);
         return false;
       }
     };
@@ -151,33 +114,29 @@ const JoinPage = () => {
       }
     };
 
-    const isEmailDuplicate = await checkEmailDuplicate(email);
-    const isUserHashDuplicate = await checkUserHashDuplicate(user_hash);
+    const isEmailDuplicate = checkEmailDuplicate(email);
+    const isUserHashDuplicate = checkUserHashDuplicate(userHash);
     const isPasswordDuplicate = checkPasswordDuplicate(password);
     const isBirthDuplicate = checkBirthDuplicate(year, month, day);
 
     if (!isEmailDuplicate) {
       console.log('이메일이 중복되었습니다.');
-      return;
     }
     if (!isUserHashDuplicate) {
       console.log('올바르지 않은 사용자명입니다.');
-      return;
     }
     if (!isPasswordDuplicate) {
       console.log('올바르지 않은 비밀번호입니다.');
-      return;
     }
     if (!isBirthDuplicate) {
       console.log('올바르지 않은 생년월일입니다.');
-      return;
     }
 
     const registerFormData = new FormData();
 
     registerFormData.append('email', email);
     registerFormData.append('nickname', nickname);
-    registerFormData.append('user_hash', user_hash);
+    registerFormData.append('userHash', userHash);
     registerFormData.append('password', password);
     registerFormData.append('birth', birth);
 
@@ -185,19 +144,14 @@ const JoinPage = () => {
       const response = await apiRequest.postFormData(API_URL.REGISTER_POST, registerFormData);
       console.log(response.data);
 
-      const loginFormData = new FormData();
-
-      loginFormData.append('email', email);
-      loginFormData.append('password', password);
-
       try {
-        const response = await apiRequest.postFormData(API_URL.LOGIN, loginFormData);
-        console.log(response.data);
-
+        await login(email, password);
         navigate(PATH.MAIN_SCREEN);
       } catch (error) {
         console.error(error);
       }
+
+      // 데이터 처리 후 로그인 페이지로 이동
     } catch (error) {
       console.error(error);
     }
@@ -241,8 +195,8 @@ const JoinPage = () => {
               </label>
               <input
                 type="text"
-                name="user_hash"
-                id="user_hash"
+                name="userHash"
+                id="userHash"
                 onChange={(e) => setUserHash(e.target.value)}
                 className="text-input"></input>
             </div>
@@ -309,7 +263,7 @@ const JoinPage = () => {
               </fieldset>
             </div>
             <div>
-              <button>계속하기</button>
+              <button className="button-full-width">계속하기</button>
             </div>
             <div className="policy-agreement">
               <span>등록하는 순간 Discord의 </span>

@@ -1,7 +1,7 @@
 // Modal.jsx
 import PropTypes from 'prop-types';
 
-const Modal = ({ isOpen, onClose, children}) => {
+const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
 
   const handleOverlayClick = (e) => {
@@ -13,10 +13,12 @@ const Modal = ({ isOpen, onClose, children}) => {
   return (
     <div className="modal-overlay" onClick={handleOverlayClick}>
       <div className="modal">
-        <button className="modal-close" onClick={onClose}>
-          Close
-        </button>
-        {children}
+        <div className="modal-wrapper">{children}</div>
+        <div className="modal-close-wrapper">
+          <button className="modal-close" onClick={onClose}>
+            Close
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -4,6 +4,8 @@ import { apiRequest } from '../../api/request';
 import { API_URL } from '../../api/urls';
 import { useState } from 'react';
 import { PATH } from '../../utils/paths/paths';
+import Modal from '../../components/Modal';
+import { login } from '../../api/hooks/login';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -18,29 +20,16 @@ const LoginPage = () => {
   const [passwordInputClass, setPasswordInputClass] = useState('input-label');
 
   const handleSubmit = async () => {
-    const checkEmailDuplicate = async (email) => {
+    const checkEmailDuplicate = (email) => {
       if (!email.trim()) {
         setEmailLabel('이메일 - 이메일은 필수 입력 값입니다.');
         setEmailInputClass('input-label-invalid');
         return false;
       }
-      try {
-        const response = await apiRequest.get(API_URL.REGISTER_GET, { params: { email } });
-        console.log(response.data);
-        const members = response.data;
-
-        // 이메일이 중복되는지 확인
-        const isDuplicate = members.some((member) => member.email === email);
-        if (isDuplicate) {
-          setEmailLabel('이메일 - 이미 등록된 이메일입니다.');
-          setEmailInputClass('input-label-invalid');
-          return false; // 유효성 검사 실패
-        }
-        setEmailLabel('이메일');
-        setEmailInputClass('text-input');
-        return true;
-      } catch (error) {
-        console.error(error);
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!regex.test(email)) {
+        setEmailLabel('이메일 - 이메일 형식이 올바르지 않습니다.');
+        setEmailInputClass('input-label-invalid');
         return false;
       }
     };
@@ -59,30 +48,29 @@ const LoginPage = () => {
       }
     };
 
-    const isEmailDuplicate = await checkEmailDuplicate(email);
+    const isEmailDuplicate = checkEmailDuplicate(email);
     const isPasswordDuplicate = checkPasswordDuplicate(password);
 
     if (!isEmailDuplicate) {
-      console.log('이메일이 중복되었습니다.');
-      return;
+      console.log('유효하지 않은 이메일입니다.');
     }
     if (!isPasswordDuplicate) {
       console.log('올바르지 않은 비밀번호입니다.');
-      return;
     }
 
-    const formData = new FormData();
-
-    formData.append('email', email);
-    formData.append('password', password);
-
     try {
-      const response = await apiRequest.postFormData(API_URL.LOGIN, formData);
-      console.log(response.data);
-
+      await login(email, password);
       navigate(PATH.MAIN_SCREEN);
     } catch (error) {
-      console.error(error);
+      if (error.response && error.response.status === 500) {
+        setEmailLabel('이메일 - 유효하지 않은 아이디 또는 비밀번호입니다.');
+        setEmailInputClass('input-label-invalid');
+        setPasswordLabel('비밀번호 - 유효하지 않은 아이디 또는 비밀번호입니다.');
+        setPasswordInputClass('input-label-invalid');
+      } else {
+        console.error(error);
+      }
+      return false;
     }
   };
 
@@ -95,14 +83,19 @@ const LoginPage = () => {
     try {
       const response = await apiRequest.post(API_URL.EMAIL_POST, { email: email });
       console.log(response.data);
-      
+
       setEmailLabel('이메일');
       setEmailInputClass('text-input');
+      setPasswordLabel('비밀번호');
+      setPasswordInputClass('text-input');
+      setModalOpen(true);
       return true;
     } catch (error) {
       if (error.response && error.response.status === 404) {
         setEmailLabel('이메일 - 존재하지 않는 이메일입니다.');
         setEmailInputClass('input-label-invalid');
+        setPasswordLabel('비밀번호');
+        setPasswordInputClass('text-input');
       } else {
         console.error(error);
       }
@@ -110,6 +103,11 @@ const LoginPage = () => {
     }
   };
 
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
   return (
     <div id="login-page">
       <div className="login-form">
@@ -146,7 +144,7 @@ const LoginPage = () => {
               </div>
             </div>
             <div>
-              <button>로그인</button>
+              <button className="button-full-width">로그인</button>
             </div>
             <div>
               <span className="join-link">계정이 필요한가요?</span>
@@ -157,6 +155,18 @@ const LoginPage = () => {
           </div>
         </Form>
       </div>
+      <Modal isOpen={modalOpen} onClose={handleCloseModal}>
+        <div className="modal-header">
+          <h2>지시사항 이메일로 전송 완료</h2>
+        </div>
+        <div className="modal-content">
+          <p>
+            계정 비밀번호 변경 방법을
+            <strong>{email}</strong>
+            (으)로 보냈어요. 받은 편지함 또는 스팸함을 확인해주세요.
+          </p>
+        </div>
+      </Modal>
     </div>
   );
 };

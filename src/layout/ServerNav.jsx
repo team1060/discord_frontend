@@ -1,6 +1,8 @@
 import { FaPlus } from 'react-icons/fa6';
 import { FaCompass } from 'react-icons/fa';
 import ServerInner from './ServerInner';
+import { Link } from 'react-router-dom';
+import { PATH } from '../utils/paths/paths';
 
 const ServerNav = () => {
   return (
@@ -11,9 +13,11 @@ const ServerNav = () => {
             <div className="pill wrapper">
               <span className="item"></span>
             </div>
-            <div>
-              <img className="childWrapper" src="/img/default_profile/5.jpg" alt="default profile" />
-            </div>
+            <Link to={PATH.MAIN_SCREEN}>
+              <div>
+                <img className="childWrapper" src="/img/default_profile/5.jpg" alt="default profile" />
+              </div>
+            </Link>
           </div>
         </div>
 
@@ -27,9 +31,11 @@ const ServerNav = () => {
             <span className="item"></span>
           </div>
           <div>
-            <div className="childWrapper distinct">
-              <FaPlus size="20" />
-            </div>
+            <Link to={''}>
+              <div className="childWrapper distinct">
+                <FaPlus size="20" />
+              </div>
+            </Link>
           </div>
         </div>
         <div className="listItem">
@@ -37,9 +43,11 @@ const ServerNav = () => {
             <span className="item"></span>
           </div>
           <div>
-            <div className="childWrapper distinct">
-              <FaCompass size="20" />
-            </div>
+            <Link to={''}>
+              <div className="childWrapper distinct">
+                <FaCompass size="20" />
+              </div>
+            </Link>
           </div>
         </div>
       </div>

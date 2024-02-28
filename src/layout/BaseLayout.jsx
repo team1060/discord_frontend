@@ -1,7 +1,8 @@
 import LayoutContainer from './LayoutContainer';
 import ServerNav from './ServerNav';
+import PropTypes from 'prop-types';
 
-const BaseLayout = () => {
+const BaseLayout = (props) => {
   return (
     <>
       <div id="layout">
@@ -11,23 +12,23 @@ const BaseLayout = () => {
           </div>
         </header>
         <main className="main">
-          <nav className="nav-server">
+          <nav className="server-nav">
             <ServerNav></ServerNav>
           </nav>
           <div className="chatroom-wrap">
             <nav className="nav-chatroom">
-              <header className="nav-header">`2`</header>
-              <article className="nav-article">`3`</article>
+              <header className="nav-header">{props.navHeader}</header>
+              <article className="nav-article">{props.navArticle}</article>
               <footer className="nav-footer">
-                <div className="nav-footer-wrapper">`4`</div>
-                <div className="nav-footer-container">`5`</div>
+                <div className="nav-footer-wrapper">{props.navFooterWrapper}</div>
+                <div className="nav-footer-container">{props.navFooterContainer}</div>
               </footer>
             </nav>
             <section className="section">
-              <header className="section-header">`6`</header>
+              <header className="section-header">{props.sectionHeader}</header>
               <div className="chat-title">
-                <article className="section-article">`7`</article>
-                <aside className="section-aside">`8`</aside>
+                <article className="section-article">{props.sectionArticle}</article>
+                <aside className="section-aside">{props.sectionAside}</aside>
               </div>
             </section>
           </div>
@@ -38,6 +39,16 @@ const BaseLayout = () => {
       </div>
     </>
   );
+};
+
+BaseLayout.propTypes = {
+  navHeader: PropTypes.node.isRequired,
+  navArticle: PropTypes.node.isRequired,
+  navFooterWrapper: PropTypes.node.isRequired,
+  navFooterContainer: PropTypes.node.isRequired,
+  sectionHeader: PropTypes.node.isRequired,
+  sectionArticle: PropTypes.node.isRequired,
+  sectionAside: PropTypes.node.isRequired,
 };
 
 export default BaseLayout;

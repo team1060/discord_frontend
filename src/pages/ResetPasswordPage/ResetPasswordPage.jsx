@@ -88,7 +88,7 @@ const ResetPasswordPage = () => {
                 className="text-input"></input>
             </div>
             <div>
-              <button className="button-full-width ">비밀번호 변경하기</button>
+              <button className="btn-blue btn-full-width">비밀번호 변경하기</button>
             </div>
           </div>
         </Form>

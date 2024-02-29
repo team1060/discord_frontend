@@ -1,7 +1,6 @@
 import BaseLayout from '../../layout/BaseLayout';
 import MainNavArticle from './MainNavArticle';
 import MainNavHeader from './MainNavHeader';
-import './MainScreenPage.scss';
 
 function MainScreenPage() {
   return (

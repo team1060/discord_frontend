@@ -20,6 +20,9 @@ h1,
 h2,
 .h2 {
   font-size: $heading-h2-size;
+  &.small {
+    font-size: $heading-h2-small-size;
+  }
 }
 
 h3,

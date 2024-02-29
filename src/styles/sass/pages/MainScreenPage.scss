@@ -2,3 +2,123 @@
   width: 100%;
   height: 100%;
 }
+
+#main-nav-header {
+  width: 100%;
+  height: 100%;
+}
+
+#main-nav-article {
+  height: 100%;
+  width: 100%;
+
+  .scroller {
+    color: $chatroom-color;
+  }
+
+  .channel {
+    max-width: calc(230px - 8px);
+    margin-left: 8px;
+    background: $chatroom-background-color;
+    border-radius: 4px;
+
+    &:hover {
+      background: $chatroom-background-hover-color;
+      color: $chatroom-hover-color;
+    }
+
+    &:active {
+      background: $chatroom-background-active-color;
+
+      color: $chatroom-active-color;
+    }
+    .linkbtn {
+      padding-right: 8px;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      width: 100%;
+
+      .link {
+        display: flex;
+        min-width: 0;
+        flex: 1 1 auto;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        align-items: center;
+        color: inherit;
+        gap: 8px;
+
+        .layout {
+          display: flex;
+          min-width: 0;
+          align-items: center;
+          border-radius: 4px;
+          height: 42px;
+          padding: 0 8px;
+        }
+        .avatar-with-text {
+          flex-grow: 1;
+          .avatar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+            width: 32px;
+            height: 32px;
+            margin-right: 12px;
+          }
+
+          .content {
+            min-width: 0;
+            flex: 1 1 auto;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+
+            .nameWrapper {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+
+              .name {
+                font-size: $username-font-size;
+                line-height: 20px;
+                font-weight: $username-font-weight;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                flex: 0 1 auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .channer-header {
+    display: flex;
+    padding: 18px 4px 8px 18px;
+    height: 40px;
+
+    &:hover {
+      color: $chatroom-hover-color;
+    }
+
+    .header-text {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .header-button {
+      flex: 0;
+      width: 16px;
+      height: 16px;
+      margin-left: 0;
+      margin-right: 2px;
+      cursor: pointer;
+    }
+  }
+}

@@ -7,8 +7,8 @@
   text-overflow: ellipsis;
 
   /* FireFox ScrollBar */
-  scrollbar-color: $chatroom-color;
-  scrollbar-width: none;
+  // scrollbar-color: $chatroom-color;
+  // scrollbar-width: thin;
 
   /* Webkit ScrollBar */
   &::-webkit-scrollbar {
@@ -16,11 +16,11 @@
   }
 
   &::-webkit-scrollbar-track {
-    background: $chatroom-color;
+    background: $chatroom-background-color;
   }
 
   &::-webkit-scrollbar-thumb {
-    background: $chatroom-color;
+    background: $chatroom-background-color;
   }
 
   &::-webkit-scrollbar-button {

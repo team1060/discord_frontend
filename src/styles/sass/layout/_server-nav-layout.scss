@@ -5,6 +5,11 @@
   .scroller {
     height: 100%;
     padding-top: 12px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
     .tutorialContainer {
       width: 100%;
       .listItem {
@@ -55,6 +60,7 @@
         align-items: center;
         justify-content: center;
         overflow: hidden;
+        line-height: 48px;
         background: $server-background-color;
       }
 

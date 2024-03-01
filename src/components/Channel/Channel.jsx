@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { FaXmark } from 'react-icons/fa6';
+
 const Channel = ({ link, avatar, name }) => {
   return (
     <li className="channel">
@@ -14,6 +16,9 @@ const Channel = ({ link, avatar, name }) => {
             </div>
           </div>
         </Link>
+        <div className="close-button">
+          <FaXmark size="16" />
+        </div>
       </div>
     </li>
   );

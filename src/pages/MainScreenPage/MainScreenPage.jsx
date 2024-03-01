@@ -8,8 +8,6 @@ function MainScreenPage() {
       <BaseLayout
         navHeader={<MainNavHeader />}
         navArticle={<MainNavArticle />}
-        navFooterWrapper="<MainNavFooterWrapper />"
-        navFooterContainer="<MainNavFooterContainer />"
         sectionHeader="<MainSectionNavHeader />"
         sectionArticle="<MainSectionArticle />"
         sectionAside="<MainSectionAside />"

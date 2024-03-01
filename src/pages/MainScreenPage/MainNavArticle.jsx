@@ -11,7 +11,7 @@ const MainNavArticle = () => {
     setChannels((prevChannels) => [
       ...prevChannels,
       { link: '', avatar: <FaUserFriends size="24" />, name: '새로운 채널' },
-       // 추후 실제 값으로 수정
+      // 추후 실제 값으로 수정
     ]);
   };
   return (

@@ -1,4 +1,6 @@
 import LayoutContainer from './LayoutContainer';
+import NavFooterContainer from './NavFooterContainer';
+import NavFooterWrapper from './NavFooterWrapper';
 import ServerNav from './ServerNav';
 import PropTypes from 'prop-types';
 
@@ -13,15 +15,20 @@ const BaseLayout = (props) => {
         </header>
         <main className="main">
           <nav className="server-nav">
-            <ServerNav></ServerNav>
+            <ServerNav />
           </nav>
           <div className="chatroom-wrap">
             <nav className="nav-chatroom">
               <header className="nav-header">{props.navHeader}</header>
               <article className="nav-article">{props.navArticle}</article>
               <footer className="nav-footer">
-                <div className="nav-footer-wrapper">{props.navFooterWrapper}</div>
-                <div className="nav-footer-container">{props.navFooterContainer}</div>
+                <div className="nav-footer-wrapper">
+                  <NavFooterWrapper />
+                </div>
+                <div className="nav-footer-container">
+                  {' '}
+                  <NavFooterContainer />
+                </div>
               </footer>
             </nav>
             <section className="section">

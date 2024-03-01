@@ -1,7 +1,6 @@
 // Form.jsx
 
 import PropTypes from 'prop-types';
-import React from 'react';
 
 const Form = ({ children, className, onSubmit }) => {
   const handleSubmit = (e) => {

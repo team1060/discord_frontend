@@ -1,6 +1,7 @@
 import BaseLayout from '../../layout/BaseLayout';
 import MainNavArticle from './MainNavArticle';
 import MainNavHeader from './MainNavHeader';
+import MainSectionHeader from './MainSectionHeader';
 
 function MainScreenPage() {
   return (
@@ -8,7 +9,7 @@ function MainScreenPage() {
       <BaseLayout
         navHeader={<MainNavHeader />}
         navArticle={<MainNavArticle />}
-        sectionHeader="<MainSectionNavHeader />"
+        sectionHeader={<MainSectionHeader />}
         sectionArticle="<MainSectionArticle />"
         sectionAside="<MainSectionAside />"
       />

@@ -15,7 +15,8 @@ $chatroom-background-hover-color: #404249;
 $voice-info-color: #232428;
 $voice-info-hover-color: #3d3e45;
 $chat-background-color: #313338;
-$chat-hover-color: #2e3035;
+$chat-background-active-color: #43444c;
+$chat-background-hover-color: #393c41;
 $chat-input-color: #383a40;
 $chat-partner-color: #232428;
 $chat-partner-detail-color: #111214;
@@ -39,12 +40,16 @@ $avatar-colors: (#d92a43, #e64939, #7aba5e, #473c88);
 $header-border-color: 1px solid #111214;
 $voice-border-color: 0.5px solid #949ba4;
 $gray-border-color: #313338;
+$divider-border-color: #949ba4;
 
 // 폰트 색상
 $base-font-color: #ffffff;
 $chatroom-color: #949ba4;
 $chatroom-active-color: #ffffff;
 $chatroom-hover-color: #dadde0;
+$chat-header-color: #949ba4;
+$chat-header-active-color: #ffffff;
+$chat-header-hover-color: #dadde0;
 $chat-color: #ffffff;
 $chat-time-color: #949ba4;
 $chat-link-color: #00a1f6;

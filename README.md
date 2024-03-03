@@ -44,3 +44,52 @@
 
 [Axios Instance]()
 [Refresh Token](https://s0ojin.tistory.com/44)
+
+### React Snippets
+
+[React Snippets](https://velog.io/@rgfdds98/React-snippets-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%A2%85%EB%A5%98%EB%B3%84-%EB%8B%A8%EC%B6%95%ED%82%A4)
+
+- rsc : 빈 div를 가진 화살표 함수 컴포넌트 생성
+
+```
+// rsc
+import React from 'react';
+
+const List = () => {
+  return (
+    <div>
+
+    </div>
+  );
+};
+
+export default List;
+```
+
+- rafc : 화살표 함수 컴포넌트를 생성과 함께 export하고, 컴포넌트가 있는 js파일명이 div안에 작성됨
+
+```
+// rafc
+import React from 'react'
+
+export const List = () => {
+  return (
+    <div>List</div>
+  )
+}
+```
+
+- rafce : export코드가 분리된 화살표 함수 컴포넌트를 생성하고, 컴포넌트가 있는 js파일명이 div안에 작성됨
+
+```
+// rafce
+import React from 'react'
+
+const List = () => {
+  return (
+    <div>List</div>
+  )
+}
+
+export default List
+```

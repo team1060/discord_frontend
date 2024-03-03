@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { FaXmark } from 'react-icons/fa6';
 
-const Channel = ({ link, avatar, name }) => {
+const Channel = ({ link, avatar, name, onDelete }) => {
   return (
     <li className="channel">
       <div className="linkbtn">
@@ -16,7 +16,7 @@ const Channel = ({ link, avatar, name }) => {
             </div>
           </div>
         </Link>
-        <div className="close-button">
+        <div className="close-button" onClick={onDelete}>
           <FaXmark size="16" />
         </div>
       </div>
@@ -28,6 +28,7 @@ Channel.propTypes = {
   link: PropTypes.string.isRequired,
   avatar: PropTypes.node.isRequired,
   name: PropTypes.string.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
 
 export default Channel;

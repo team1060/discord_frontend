@@ -1,0 +1,29 @@
+@import '/src/styles/sass/main.scss';
+
+.scroller {
+  height: 100%;
+  overflow-y: scroll;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  /* FireFox ScrollBar */
+  // scrollbar-color: $chatroom-color;
+  // scrollbar-width: thin;
+
+  /* Webkit ScrollBar */
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $chatroom-background-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $chatroom-background-color;
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+}

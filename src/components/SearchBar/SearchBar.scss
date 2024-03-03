@@ -1,0 +1,29 @@
+// SearchBar.scss
+@import '/src/styles/sass/main.scss';
+
+.search-bar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  .search-button {
+    width: 100%;
+    border: 0;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: $search-bachground-color;
+    box-shadow: none;
+    color: $search-color;
+    font-size: $search-font-size;
+    font-weight: $search-font-weight;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &.search-main-nav {
+      height: 28px;
+      cursor: pointer;
+    }
+  }
+}

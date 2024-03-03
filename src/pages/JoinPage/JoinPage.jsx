@@ -263,7 +263,7 @@ const JoinPage = () => {
               </fieldset>
             </div>
             <div>
-              <button className="button-full-width">계속하기</button>
+              <button className="btn-blue btn-full-width">계속하기</button>
             </div>
             <div className="policy-agreement">
               <span>등록하는 순간 Discord의 </span>

@@ -1,0 +1,19 @@
+/* 버튼 */
+.btn-full-width {
+  width: 100%;
+}
+
+.btn-blue {
+  height: 44px;
+  margin-bottom: 8px;
+  padding: 2px 16px;
+  border: none;
+  background-color: $blue-button-color;
+  color: $base-font-color;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  &:hover {
+    background: $blue-button-hover-color;
+  }
+}

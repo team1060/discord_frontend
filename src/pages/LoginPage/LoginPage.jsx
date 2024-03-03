@@ -4,7 +4,7 @@ import { apiRequest } from '../../api/request';
 import { API_URL } from '../../api/urls';
 import { useState } from 'react';
 import { PATH } from '../../utils/paths/paths';
-import Modal from '../../components/Modal';
+import Modal from '../../components/Modal/Modal';
 import { login } from '../../api/hooks/login';
 
 const LoginPage = () => {
@@ -144,7 +144,7 @@ const LoginPage = () => {
               </div>
             </div>
             <div>
-              <button className="button-full-width">로그인</button>
+              <button className="btn-blue btn-full-width">로그인</button>
             </div>
             <div>
               <span className="join-link">계정이 필요한가요?</span>

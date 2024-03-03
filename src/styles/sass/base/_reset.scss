@@ -146,7 +146,28 @@ blockquote {
   }
 }
 
+a {
+  color: inherit;
+}
+a,
+a:active,
+a:hover {
+  text-decoration: none;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+a,
+div,
+span,
+strong,
+button,
+input,
+textarea,
+select,
+label {
+  outline: 0;
 }

@@ -15,11 +15,20 @@ h1,
   &.small {
     font-size: $heading-h1-small-size;
   }
+  &.base {
+    font-size: $base-font-size;
+  }
 }
 
 h2,
 .h2 {
   font-size: $heading-h2-size;
+  &.small {
+    font-size: $heading-h2-small-size;
+  }
+  &.base {
+    font-size: $base-font-size;
+  }
 }
 
 h3,

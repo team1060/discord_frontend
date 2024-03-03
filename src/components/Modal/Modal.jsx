@@ -1,5 +1,6 @@
 // Modal.jsx
 import PropTypes from 'prop-types';
+import './Modal.scss';
 
 const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
@@ -15,7 +16,7 @@ const Modal = ({ isOpen, onClose, children }) => {
       <div className="modal">
         <div className="modal-wrapper">{children}</div>
         <div className="modal-close-wrapper">
-          <button className="modal-close" onClick={onClose}>
+          <button className="btn-blue modal-close" onClick={onClose}>
             Close
           </button>
         </div>

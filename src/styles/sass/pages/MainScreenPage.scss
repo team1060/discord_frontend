@@ -2,3 +2,252 @@
   width: 100%;
   height: 100%;
 }
+
+#main-nav-header {
+  width: 100%;
+  height: 100%;
+}
+
+#main-nav-article {
+  height: 100%;
+  width: 100%;
+
+  .scroller {
+    color: $chatroom-color;
+  }
+
+  .channel {
+    max-width: calc(230px - 8px);
+    margin-left: 8px;
+    background: $chatroom-background-color;
+    border-radius: 4px;
+
+    .linkbtn {
+      padding-right: 8px;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      width: 100%;
+
+      .link {
+        display: flex;
+        min-width: 0;
+        flex: 1 1 auto;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        align-items: center;
+        color: inherit;
+        gap: 8px;
+
+        .layout {
+          display: flex;
+          min-width: 0;
+          align-items: center;
+          border-radius: 4px;
+          height: 42px;
+          padding: 0 8px;
+        }
+
+        .avatar-with-text {
+          flex-grow: 1;
+
+          .avatar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+            width: 32px;
+            height: 32px;
+            margin-right: 12px;
+          }
+
+          .content {
+            min-width: 0;
+            flex: 1 1 auto;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+
+            .nameWrapper {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+
+              .name {
+                font-size: $username-font-size;
+                line-height: 20px;
+                font-weight: $username-font-weight;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                flex: 0 1 auto;
+              }
+            }
+          }
+        }
+      }
+
+      .close-button {
+        display: none;
+        width: 16px;
+        height: 16px;
+        opacity: 0.7;
+        margin: 2px;
+        padding-right: 8px;
+        cursor: pointer;
+      }
+    }
+
+    &:hover {
+      background: $chatroom-background-hover-color;
+      color: $chatroom-hover-color;
+
+      .linkbtn .close-button {
+        display: block;
+      }
+    }
+
+    &:active {
+      background: $chatroom-background-active-color;
+
+      color: $chatroom-active-color;
+    }
+  }
+
+  .channel-header {
+    display: flex;
+    padding: 18px 4px 8px 18px;
+    height: 40px;
+
+    &:hover {
+      color: $chatroom-hover-color;
+    }
+
+    .header-text {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .header-button {
+      flex: 0;
+      width: 16px;
+      height: 16px;
+      margin-left: 0;
+      margin-right: 2px;
+      cursor: pointer;
+    }
+  }
+}
+
+#main-section-header {
+  width: 100%;
+  height: 100%;
+
+  .divider {
+    width: 1px;
+    height: 100%;
+    margin: 0 8px;
+    flex: 0 0 auto;
+    background: $divider-border-color;
+    box-sizing: border-box;
+  }
+
+  .header-wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    padding-bottom: 7px;
+    display: flex;
+    align-items: center;
+
+    .header-inner {
+      display: flex;
+      flex: 1;
+      height: 24px;
+      width: 100%;
+
+      .children {
+        position: relative;
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        overflow: hidden;
+        height: 24px;
+
+        .avatarWrapper {
+          margin: 0 8px;
+        }
+
+        .titleWrapper {
+          margin: 0 8px 0 0;
+          flex: 0 0 auto;
+          min-width: auto;
+          .title {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            overflow: hidden;
+            white-space: nowrap;
+          }
+        }
+
+        .tabBar {
+          display: flex;
+          flex-direction: row;
+
+          .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-width: 40px;
+            border-radius: 4px;
+            margin: 0 8px;
+            padding: 4px 8px;
+            color: $chat-header-color;
+            cursor: pointer;
+
+            &:hover {
+              background-color: $chat-background-hover-color;
+              color: $chat-header-hover-color;
+            }
+            &:active,
+            &.active {
+              background-color: $chat-background-active-color;
+              color: $chat-header-active-color;
+            }
+
+            &.addFriend {
+              background: $green-button-color;
+              color: $base-font-color;
+            }
+          }
+        }
+      }
+
+      .toolbar {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        height: 24px;
+
+        .iconWrapper {
+          display: flex;
+          height: 100%;
+
+          .icon {
+            position: relative;
+            height: 24px;
+            width: auto;
+            flex: 0 0 auto;
+            margin: 0 8px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

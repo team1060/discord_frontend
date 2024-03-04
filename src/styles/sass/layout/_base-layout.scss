@@ -67,7 +67,7 @@
 
     .chat-title {
       display: flex;
-      justify-content: flex-end;
+      justify-content: flex-start;
       height: calc(100% - $main-header-height);
 
       .section-article {
@@ -81,9 +81,15 @@
   }
 }
 
-@media (min-width: 1142px) {
-  #layout .main .section-aside {
-    display: block;
+@media (max-width: 1142px) {
+  #layout .main .chat-title .section-aside {
+    display: none;
+  }
+}
+
+@media (max-width: 1142px) {
+  #layout .main .chat-title .section-article {
+    width: 100%;
   }
 }
 

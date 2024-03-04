@@ -1,0 +1,86 @@
+@import '/src/styles/sass/main.scss';
+
+.people-item {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+  margin-right: 10px;
+  line-height: 20px;
+  height: 62px;
+  overflow: hidden;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-top: 1px solid $friend-divider-border-color;
+  border-radius: 8px;
+
+  &:hover {
+    background: $chat-header-background-hover-color;
+  }
+
+  .item-content {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin-left: 10px;
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        .username {
+          display: flex;
+          flex-grow: 1;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+          overflow: hidden;
+          white-space: nowrap;
+          color: $username-color;
+          font-size: $username-font-size;
+          font-weight: $username-font-weight;
+        }
+
+        .subtext {
+          font-size: 12px;
+          font-weight: $base-font-weight;
+        }
+      }
+    }
+
+    .action {
+      display: flex;
+      margin-left: 8px;
+      margin-right: 10px;
+
+      .action-button {
+        cursor: pointer;
+        height: 36px;
+        width: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
+        color: $emoji-color;
+        background-color: $dark-background-color;
+
+        &:hover {
+          color: $emoji-hover-color;
+        }
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

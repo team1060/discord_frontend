@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { FaXmark } from 'react-icons/fa6';
+import Avatar from '../Avatar/Avatar';
 
 const Channel = ({ link, avatar, name, onDelete }) => {
   return (
@@ -8,7 +9,7 @@ const Channel = ({ link, avatar, name, onDelete }) => {
       <div className="linkbtn">
         <Link to={link} className="link">
           <div className="avatar-with-text layout">
-            <div className="avatar">{avatar}</div>
+            <Avatar avatar={avatar} />
             <div className="content">
               <div className="nameWrapper">
                 <div className="name">{name}</div>

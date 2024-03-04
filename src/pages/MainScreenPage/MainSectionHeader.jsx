@@ -19,7 +19,9 @@ const MainSectionHeader = ({ selectedTab, onTabChange, tabs }) => {
               {tabs.map((tabName) => (
                 <h3
                   key={tabName}
-                  className={`item ${selectedTab === tabName ? 'active' : ''}`}
+                  className={`item ${selectedTab === tabName ? 'active' : ''} ${
+                    tabName === '친구 추가하기' ? 'addFriend' : ''
+                  }`}
                   onClick={() => onTabChange(tabName)}>
                   {tabName}
                 </h3>

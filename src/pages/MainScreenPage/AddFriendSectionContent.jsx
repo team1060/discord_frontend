@@ -1,5 +1,5 @@
 const AddFriendSectionContent = () => {
-  return <>5</>;
+  return <>친구 추가하기</>;
 };
 
 export default AddFriendSectionContent;

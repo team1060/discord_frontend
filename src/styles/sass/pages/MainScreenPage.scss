@@ -166,7 +166,7 @@
         align-items: center;
         min-width: 0;
         overflow: hidden;
-        height: 24px;
+        white-space: nowrap;
 
         .avatarWrapper {
           margin: 0 8px;
@@ -176,7 +176,6 @@
           margin: 0 8px 0 0;
           flex: 0 0 auto;
           min-width: auto;
-
           .title {
             display: flex;
             justify-content: flex-start;
@@ -203,6 +202,7 @@
             padding: 4px 8px;
             color: $chat-header-color;
             cursor: pointer;
+            -webkit-app-region: no-drag;
 
             &:hover {
               background-color: $chat-header-background-hover-color;

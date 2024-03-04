@@ -109,6 +109,7 @@ $chatroom-pane-width: 240px; // 채팅방 패널 가로 길이
 $chatroom-footer-wrapper-height: 91px; // 푸터 윗부분 길이
 $chatroom-footer-container-height: 53px; // 푸터 아랫부분 길이
 $chatroom-footer-height: $chatroom-footer-wrapper-height + $chatroom-footer-container-height; // 푸터 전체 길이
+$chatroom-nowplaying-width: 360px; // 메인화면 aside 길이
 $chatroom-member-width: 240px; // 채팅방 멤버 가로 길이
 $chatroom-profile-width: 340px; // 채팅방 프로필 판넬 길이
 $breakpoint: 1142px; // 반응형 미디어 쿼리

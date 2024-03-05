@@ -4,6 +4,7 @@ import MainNavArticle from './MainNavArticle';
 import MainNavHeader from './MainNavHeader';
 import MainSectionArticle from './MainSectionArticle';
 import MainSectionHeader from './MainSectionHeader';
+import MainSectionAside from './MainSectionAside';
 
 function MainScreenPage() {
   const [selectedTab, setSelectedTab] = useState('온라인'); // 기본값 : 온라인
@@ -23,7 +24,7 @@ function MainScreenPage() {
         navArticle={<MainNavArticle />}
         sectionHeader={<MainSectionHeader tabs={tabs} selectedTab={selectedTab} onTabChange={handleTabChange} />}
         sectionArticle={<MainSectionArticle tabs={tabs} selectedTab={selectedTab} />}
-        sectionAside="<MainSectionAside />"
+        sectionAside={<MainSectionAside />}
       />
     </div>
   );

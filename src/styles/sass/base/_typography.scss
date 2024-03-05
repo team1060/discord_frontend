@@ -34,6 +34,15 @@ h2,
 h3,
 .h3 {
   font-size: $heading-h3-size;
+  &.small {
+    font-size: $heading-h3-small-size;
+  }
+  &.base {
+    font-size: $base-font-size;
+  }
+  &.large {
+    font-size: $heading-h3-large-size;
+  }
 }
 
 h4,

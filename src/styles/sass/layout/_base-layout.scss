@@ -67,7 +67,7 @@
 
     .chat-title {
       display: flex;
-      justify-content: flex-end;
+      justify-content: flex-start;
       height: calc(100% - $main-header-height);
 
       .section-article {
@@ -81,19 +81,27 @@
   }
 }
 
-@media (min-width: 1142px) {
-  #layout .main .section-aside {
-    display: block;
+@media (max-width: 1142px) {
+  #layout .main .chat-title {
+    .section-aside {
+      display: none;
+    }
+    .section-article {
+      width: 100%;
+    }
   }
 }
-
-// MAIN_SCREEN과 SERVER_CHANNEL에서 .section-aside의 너비를 240px로 설정
-#main-screen #layout .main .section-aside,
-#server-channel #layout .main .section-aside {
-  width: $chatroom-member-width;
+// MAIN_SCREEN에서 .section-aside의 너비 설정
+#main-screen #layout .main .section-aside {
+  min-width: $chatroom-nowplaying-width;
 }
 
-// DIRECT_MESSAGE에서 .section-aside의 너비를 340px로 설정
+// SERVER_CHANNEL에서 .section-aside의 너비 설정
+#server-channel #layout .main .section-aside {
+  min-width: $chatroom-member-width;
+}
+
+// DIRECT_MESSAGE에서 .section-aside의 너비 설정
 #direct-message #layout .main .section-aside {
-  width: $chatroom-profile-width;
+  min-width: $chatroom-profile-width;
 }

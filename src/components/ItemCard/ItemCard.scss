@@ -1,0 +1,16 @@
+@import '/src/styles/sass/main.scss';
+
+.itemCard {
+  padding: 16px;
+  background: $dark-background-color;
+  width: 100%;
+  border: 1px solid $gray-border-color;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  .itemCard-section {
+    padding: 12px;
+  }
+}

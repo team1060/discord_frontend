@@ -1,0 +1,12 @@
+@import '/src/styles/sass/main.scss';
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+  border-radius: 50%;
+}

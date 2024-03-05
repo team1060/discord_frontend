@@ -6,6 +6,8 @@
 #main-nav-header {
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 #main-nav-article {
@@ -50,16 +52,6 @@
 
         .avatar-with-text {
           flex-grow: 1;
-
-          .avatar {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex: 0 0 auto;
-            width: 32px;
-            height: 32px;
-            margin-right: 12px;
-          }
 
           .content {
             min-width: 0;
@@ -174,7 +166,7 @@
         align-items: center;
         min-width: 0;
         overflow: hidden;
-        height: 24px;
+        white-space: nowrap;
 
         .avatarWrapper {
           margin: 0 8px;
@@ -196,26 +188,30 @@
         .tabBar {
           display: flex;
           flex-direction: row;
+          max-height: 24px;
+          overflow-y: visible;
 
           .item {
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            min-width: 40px;
+            min-width: 32px;
             border-radius: 4px;
             margin: 0 8px;
             padding: 4px 8px;
             color: $chat-header-color;
             cursor: pointer;
+            -webkit-app-region: no-drag;
 
             &:hover {
-              background-color: $chat-background-hover-color;
+              background-color: $chat-header-background-hover-color;
               color: $chat-header-hover-color;
             }
+
             &:active,
             &.active {
-              background-color: $chat-background-active-color;
+              background-color: $chat-header-background-active-color;
               color: $chat-header-active-color;
             }
 
@@ -245,9 +241,39 @@
             flex: 0 0 auto;
             margin: 0 8px;
             cursor: pointer;
+            color: $emoji-color;
+
+            &:hover {
+              color: $emoji-hover-color;
+            }
           }
         }
       }
     }
+  }
+}
+
+#main-section-aside {
+  background: $chat-background-color;
+  height: 100%;
+  width: 100%;
+
+  .scroller-wrapper {
+    padding: 16px 5px 16px 16px;
+    margin-left: 2px;
+    height: 100%;
+
+    .body {
+      background-color: $server-background-color;
+      margin-top: 12px;
+      border-radius: 8px;
+    }
+  }
+
+  .title {
+    line-height: 24px;
+    width: 100%;
+    margin: 8px 0 16px;
+    color: $base-font-color;
   }
 }

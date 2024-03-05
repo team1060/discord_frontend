@@ -1,0 +1,32 @@
+/* userInfo.scss */
+@import '/src/styles/sass/main.scss';
+
+.user-info {
+  display: flex;
+  overflow: hidden;
+  
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    .username {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      white-space: nowrap;
+      color: $username-color;
+      font-size: $username-font-size;
+      font-weight: $username-font-weight;
+    }
+
+    .subtext {
+      font-size: 12px;
+      font-weight: $base-font-weight;
+    }
+  }
+}

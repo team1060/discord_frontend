@@ -67,6 +67,7 @@ $loading-color: #f0b132;
 $error-color: #fa777c;
 $label-color: #b5bac1;
 $input-color: #ffffff;
+$input-focused-color: #00a1f6;
 
 // 폰트 크기
 $base-font-size: 16px;
@@ -78,6 +79,7 @@ $heading-h2-size: 20px;
 $heading-h2-small-size: 12px;
 $heading-h3-size: 16px;
 $heading-h3-small-size: 12px;
+$heading-h3-large-size: 20px;
 
 $heading-h4-size: 16px;
 $heading-h5-size: 14px;
@@ -108,7 +110,7 @@ $server-pane-width: 72px; // 서버 패널 가로 길이
 $chatroom-pane-width: 240px; // 채팅방 패널 가로 길이
 $chatroom-footer-wrapper-height: 91px; // 푸터 윗부분 길이
 $chatroom-footer-container-height: 53px; // 푸터 아랫부분 길이
-$chatroom-footer-height: $chatroom-footer-wrapper-height + $chatroom-footer-container-height; // 푸터 전체 길이
+$chatroom-footer-height: $chatroom-footer-wrapper-height+$chatroom-footer-container-height; // 푸터 전체 길이
 $chatroom-nowplaying-width: 360px; // 메인화면 aside 길이
 $chatroom-member-width: 240px; // 채팅방 멤버 가로 길이
 $chatroom-profile-width: 340px; // 채팅방 프로필 판넬 길이

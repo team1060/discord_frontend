@@ -17,3 +17,8 @@
     background: $blue-button-hover-color;
   }
 }
+
+.btn-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

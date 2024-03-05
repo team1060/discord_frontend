@@ -40,6 +40,9 @@ h3,
   &.base {
     font-size: $base-font-size;
   }
+  &.large {
+    font-size: $heading-h3-large-size;
+  }
 }
 
 h4,

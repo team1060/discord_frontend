@@ -25,35 +25,9 @@
     max-width: 100%;
 
     .user-info {
-      display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
       margin-left: 10px;
-
-      .text {
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-
-        .username {
-          display: flex;
-          flex-grow: 1;
-          flex-direction: row;
-          align-items: center;
-          justify-content: flex-start;
-          overflow: hidden;
-          white-space: nowrap;
-          color: $username-color;
-          font-size: $username-font-size;
-          font-weight: $username-font-weight;
-        }
-
-        .subtext {
-          font-size: 12px;
-          font-weight: $base-font-weight;
-        }
-      }
     }
 
     .action {

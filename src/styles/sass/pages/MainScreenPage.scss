@@ -252,3 +252,28 @@
     }
   }
 }
+
+#main-section-aside {
+  background: $chat-background-color;
+  height: 100%;
+  width: 100%;
+
+  .scroller-wrapper {
+    padding: 16px 5px 16px 16px;
+    margin-left: 2px;
+    height: 100%;
+
+    .body {
+      background-color: $server-background-color;
+      margin-top: 12px;
+      border-radius: 8px;
+    }
+  }
+
+  .title {
+    line-height: 24px;
+    width: 100%;
+    margin: 8px 0 16px;
+    color: $base-font-color;
+  }
+}

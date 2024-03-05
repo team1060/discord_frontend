@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import AddFriendSectionContent from './AddFriendSectionContent';
+import AddFriendSectionContent from '../../components/FriendSection/AddFriendSectionContent';
 import FriendSection from '../../components/FriendSection/FriendSection';
 
 const MainSectionArticle = ({ selectedTab }) => {

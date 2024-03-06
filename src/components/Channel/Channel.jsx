@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { FaXmark } from 'react-icons/fa6';
+
 import Avatar from 'components/Avatar';
+import { XmarkIcon } from 'assets/images/icons/fa6';
 
 const Channel = ({ link, avatar, name, onDelete }) => {
   return (
@@ -18,7 +19,7 @@ const Channel = ({ link, avatar, name, onDelete }) => {
           </div>
         </Link>
         <div className="close-button" onClick={onDelete}>
-          <FaXmark size="16" />
+          <XmarkIcon size="16" />
         </div>
       </div>
     </li>

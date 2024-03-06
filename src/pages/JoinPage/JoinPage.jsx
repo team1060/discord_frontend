@@ -1,11 +1,11 @@
 import { Link, useNavigate } from 'react-router-dom';
-import Form from 'components/Form';
-import { GoChevronDown } from 'react-icons/go';
+import Form from 'components/Form/Form';
 import { apiRequest } from 'api/request';
 import { API_URL } from 'api/urls';
 import { useEffect, useState } from 'react';
 import { PATH } from 'utils/paths/paths';
 import { login } from 'api/hooks/login';
+import { DownIcon } from 'assets/images/icons/go';
 
 const JoinPage = () => {
   const navigate = useNavigate();
@@ -228,7 +228,7 @@ const JoinPage = () => {
                         className="input-inner"></input>
                     </div>
                     <div className="selector">
-                      <GoChevronDown />
+                      <DownIcon />
                     </div>
                   </div>
                   <div className="input-label-inner">
@@ -242,7 +242,7 @@ const JoinPage = () => {
                         className="input-inner"></input>
                     </div>
                     <div className="selector">
-                      <GoChevronDown />
+                      <DownIcon />
                     </div>
                   </div>
                   <div className="input-label-inner">
@@ -256,7 +256,7 @@ const JoinPage = () => {
                         className="input-inner"></input>
                     </div>
                     <div className="selector">
-                      <GoChevronDown />
+                      <DownIcon />
                     </div>
                   </div>
                 </div>

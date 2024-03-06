@@ -4,7 +4,7 @@ import { apiRequest } from 'api/request';
 import { API_URL } from 'api/urls';
 import { useState } from 'react';
 import { PATH } from 'utils/paths/paths';
-import Modal from 'components/Modal/Modal';
+import Modal from 'components/Modal';
 import { login } from 'api/hooks/login';
 
 const LoginPage = () => {

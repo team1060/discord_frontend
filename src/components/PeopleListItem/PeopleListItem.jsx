@@ -1,21 +1,14 @@
 import PropTypes from 'prop-types';
 import './PeopleListItem.scss';
-import { TbMessage2, TbDotsVertical } from 'react-icons/tb';
 import UserInfo from 'components/UserInfo';
+import ActionButtons from 'components/ActionButtons';
 
-const PeopleListItem = ({ avatar, username, state, onClick }) => {
+const PeopleListItem = (props) => {
   return (
-    <div className="people-item" onClick={onClick}>
+    <div className="people-item" onClick={props.onClick}>
       <div className="item-content">
-        <UserInfo avatar={avatar} username={username} state={state} />
-        <div className="action">
-          <div className="action-button">
-            <TbMessage2 size="24" />
-          </div>
-          <div className="action-button">
-            <TbDotsVertical size="24" />
-          </div>
-        </div>
+        <UserInfo avatar={props.avatar} username={props.username} state={props.state} />
+        <ActionButtons actions={props.actions} />
       </div>
     </div>
   );
@@ -26,6 +19,12 @@ PeopleListItem.propTypes = {
   username: PropTypes.string.isRequired,
   state: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
+  actions: PropTypes.arrayOf(
+    PropTypes.shape({
+      Icon: PropTypes.elementType.isRequired,
+      onClick: PropTypes.func.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default PeopleListItem;

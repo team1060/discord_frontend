@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import './PeopleListItem.scss';
 import { TbMessage2, TbDotsVertical } from 'react-icons/tb';
-import UserInfo from '../UserInfo/UserInfo';
+import UserInfo from 'components/UserInfo';
 
 const PeopleListItem = ({ avatar, username, state, onClick }) => {
   return (

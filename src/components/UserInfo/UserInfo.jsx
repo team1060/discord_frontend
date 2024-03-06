@@ -1,4 +1,4 @@
-import Avatar from '../Avatar/Avatar';
+import Avatar from 'components/Avatar';
 import PropTypes from 'prop-types';
 import './UserInfo.scss';
 

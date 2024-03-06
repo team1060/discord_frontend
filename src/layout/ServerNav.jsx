@@ -1,6 +1,6 @@
-import ServerInner from './ServerInner';
+import ServerInner from 'layout/ServerInner';
 import { Link } from 'react-router-dom';
-import { PATH } from '../utils/paths/paths';
+import { PATH } from 'utils/paths/paths';
 
 const ServerNav = () => {
   return (

@@ -1,15 +1,30 @@
 export const API_URL = {
+  // USER-API
+  STATE: '/api/user/state',
+  USER_CHANGEPW: '/api/user/changepw',
+  USER_CHANGENICKNAME: '/api/user/changenickname',
+  EMAIL_PUT: '/api/email',
+  EMAIL_POST: '/api/email',
+  PROFILE_IMG: '/api/user/profile/img',
+  PROFILE_IMG_RESET: '/api/user/profile/img/reset',
   REGISTER_GET: '/api/register',
   REGISTER_POST: '/api/register',
   REFRESH: '/api/refresh',
   LOGOUT: '/api/logout',
   LOGIN: '/api/login',
-  EMAIL_PUT: '/api/email',
-  EMAIL_POST: '/api/email',
+  USER_SEARCH: '/api/user/serach',
+  USER_PROFILE: (userId) => `/api/user/profile/${userId}`,
   EMAIL_GET: (tokenLink) => `/api/email/${tokenLink}`,
-  USER_CHANGEPW: '/api/user/changepw',
-  USER_CHANGENICKNAME: '/api/user/changenickname',
-  USER_PROFILE_IMG: '/api/user/profile/img',
+
+  //FRIEND-API
+  FRIEND_REQ: '/api/user/friend/request',
+  FRIEND_RESP: (fromUserId) => `/api/user/friend/response/${fromUserId}`,
+  FRIEND_ONLINE: (fromUserId) => `/api/user/friend/online/${fromUserId}`,
+  FRIEND_ONLINE_COUNT: (fromUserId) => `/api/user/friend/online/count/${fromUserId}`,
+  FRIEND_LIST: (fromUserId) => `/api/user/friend/list/${fromUserId}`,
+  FRIEND_LIST_COUNT: (fromUserId) => `/api/user/friend/list/count/${fromUserId}`,
+  FRIEND_DELETE: (friendId) => `/api/user/friend/${friendId}`,
+  FRIEND_REQ_DELETE: (friendRequestId) => `/api/user/friend/request/${friendRequestId}`,
 };
 
 // 토큰 필요 없는 URL

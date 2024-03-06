@@ -1,7 +1,7 @@
 // login.js
 
-import { apiRequest } from '../../api/request';
-import { API_URL } from '../../api/urls';
+import { apiRequest } from 'api/request';
+import { API_URL } from 'api/urls';
 
 // 로그인 API 호출하는 함수
 export const login = async (email, password) => {

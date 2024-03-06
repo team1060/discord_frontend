@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import BaseLayout from '../../layout/BaseLayout';
+import BaseLayout from 'layout/BaseLayout';
 import MainNavArticle from './MainNavArticle';
 import MainNavHeader from './MainNavHeader';
 import MainSectionArticle from './MainSectionArticle';

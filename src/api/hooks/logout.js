@@ -1,7 +1,7 @@
 // logout.js
 
-import { apiRequest } from '../request';
-import { API_URL } from '../urls';
+import { apiRequest } from 'api/request';
+import { API_URL } from 'api/urls';
 
 // 로그아웃 시 호출되는 함수
 export const handleLogout = async () => {

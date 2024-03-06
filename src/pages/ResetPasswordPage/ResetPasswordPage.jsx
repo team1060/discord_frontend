@@ -1,17 +1,17 @@
-import Form from '../../components/Form';
+import Form from 'components/Form';
 import { useEffect, useState } from 'react';
-import { apiRequest } from '../../api/request';
-import { API_URL } from '../../api/urls';
+import { apiRequest } from 'api/request';
+import { API_URL } from 'api/urls';
 import { jwtDecode } from 'jwt-decode';
-import { login } from '../../api/hooks/login';
-import { PATH } from '../../utils/paths/paths';
+import { login } from 'api/hooks/login';
+import { PATH } from 'utils/paths/paths';
 import { useNavigate } from 'react-router-dom';
 
 const ResetPasswordPage = () => {
   const hash = window.location.hash;
   const token = new URLSearchParams(hash.substring(1)).get('token');
 
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
 
   const [password, setPassword] = useState('');

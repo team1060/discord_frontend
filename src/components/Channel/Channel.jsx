@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { FaXmark } from 'react-icons/fa6';
-import Avatar from '../Avatar/Avatar';
+import Avatar from 'components/Avatar';
 
 const Channel = ({ link, avatar, name, onDelete }) => {
   return (
@@ -26,10 +26,10 @@ const Channel = ({ link, avatar, name, onDelete }) => {
 };
 
 Channel.propTypes = {
-  link: PropTypes.string.isRequired,
-  avatar: PropTypes.node.isRequired,
-  name: PropTypes.string.isRequired,
-  onDelete: PropTypes.func.isRequired,
+  link: PropTypes.string,
+  avatar: PropTypes.node,
+  name: PropTypes.string,
+  onDelete: PropTypes.func,
 };
 
 export default Channel;

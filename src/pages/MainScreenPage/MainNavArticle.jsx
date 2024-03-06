@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Channel from '../../components/Channel/Channel';
-import Scroller from '../../components/Scroller/Scroller';
-import { PATH } from '../../utils/paths/paths';
+import Channel from 'components/Channel/Channel';
+import Scroller from 'components/Scroller/Scroller';
+import { PATH } from 'utils/paths/paths';
 import { FaUserFriends, FaShoppingBag, FaPlus } from 'react-icons/fa';
 
 const MainNavArticle = () => {

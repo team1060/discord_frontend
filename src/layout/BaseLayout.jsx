@@ -1,7 +1,7 @@
-import LayoutContainer from './LayoutContainer';
-import NavFooterContainer from './NavFooterContainer';
-import NavFooterWrapper from './NavFooterWrapper';
-import ServerNav from './ServerNav';
+import LayoutContainer from 'layout/LayoutContainer';
+import NavFooterContainer from 'layout/NavFooterContainer';
+import NavFooterWrapper from 'layout/NavFooterWrapper';
+import ServerNav from 'layout/ServerNav';
 import PropTypes from 'prop-types';
 
 const BaseLayout = (props) => {
@@ -51,8 +51,6 @@ const BaseLayout = (props) => {
 BaseLayout.propTypes = {
   navHeader: PropTypes.node.isRequired,
   navArticle: PropTypes.node.isRequired,
-  navFooterWrapper: PropTypes.node.isRequired,
-  navFooterContainer: PropTypes.node.isRequired,
   sectionHeader: PropTypes.node.isRequired,
   sectionArticle: PropTypes.node.isRequired,
   sectionAside: PropTypes.node.isRequired,

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import SearchBar from '../SearchBar/SearchBar';
+import SearchBar from 'components/SearchBar';
 import './FriendSection.scss';
-import PeopleListItem from '../PeopleListItem/PeopleListItem';
+import PeopleListItem from 'components/PeopleListItem';
 import { FaCreativeCommonsZero } from 'react-icons/fa';
 import { useState } from 'react';
 

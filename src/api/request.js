@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FORM_DATA_REQUIRED_URLS, HEADER_NOT_REQUIRED_TOKEN_URLS } from './urls';
+import { FORM_DATA_REQUIRED_URLS, HEADER_NOT_REQUIRED_TOKEN_URLS } from 'api/urls';
 
 const baseURL = process.env.REACT_APP_BASE_URL;
 
@@ -55,6 +55,5 @@ export const apiRequest = {
   patch: (url, data) => request.patch(url, data),
   putFormData: (url, formData) => request.put(url, formData),
   put: (url, data) => request.put(url, data),
-
   delete: (url, data) => request.delete(url, data),
 };

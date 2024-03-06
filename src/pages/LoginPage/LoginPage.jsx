@@ -1,11 +1,11 @@
 import { Link, useNavigate } from 'react-router-dom';
-import Form from '../../components/Form';
-import { apiRequest } from '../../api/request';
-import { API_URL } from '../../api/urls';
+import Form from 'components/Form';
+import { apiRequest } from 'api/request';
+import { API_URL } from 'api/urls';
 import { useState } from 'react';
-import { PATH } from '../../utils/paths/paths';
-import Modal from '../../components/Modal/Modal';
-import { login } from '../../api/hooks/login';
+import { PATH } from 'utils/paths/paths';
+import Modal from 'components/Modal/Modal';
+import { login } from 'api/hooks/login';
 
 const LoginPage = () => {
   const navigate = useNavigate();

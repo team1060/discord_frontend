@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Link } from '../../node_modules/react-router-dom/dist/index';
+import { Link } from 'react-router-dom';
 
 const ServerListItem = ({ link, className, name, onClick }) => {
   return (
@@ -17,9 +17,9 @@ const ServerListItem = ({ link, className, name, onClick }) => {
 };
 
 ServerListItem.propTypes = {
-  link: PropTypes.string.isRequired,
-  className: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  link: PropTypes.string,
+  className: PropTypes.string,
+  name: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
+  onClick: PropTypes.func,
 };
 export default ServerListItem;

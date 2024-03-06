@@ -2,6 +2,7 @@
 
 #server-nav {
   height: 100%;
+
   .scroller {
     height: 100%;
     padding-top: 12px;
@@ -12,9 +13,14 @@
 
     .tutorialContainer {
       width: 100%;
+
       .listItem {
         .childWrapper {
           border-radius: 12px;
+          img {
+            width: 100%;
+            height: auto;
+          }
         }
       }
     }
@@ -26,11 +32,13 @@
       margin-bottom: 8px;
       height: auto;
       overflow: hidden;
+
       &:hover,
       &:active {
         .childWrapper {
           border-radius: 12px;
           background: $primary-background-color;
+
           &.distinct {
             background: $green-button-color;
           }
@@ -46,6 +54,7 @@
           height: 20px;
         }
       }
+
       &:active {
         .item {
           height: 40px;
@@ -71,6 +80,7 @@
         background: $gray-border-color;
         box-sizing: border-box;
       }
+
       .pill {
         position: absolute;
         left: 0;

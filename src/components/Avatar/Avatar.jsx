@@ -6,6 +6,6 @@ const Avatar = ({ avatar }) => {
 };
 
 Avatar.propTypes = {
-  avatar: PropTypes.node.isRequired,
+  avatar: PropTypes.node,
 };
 export default Avatar;

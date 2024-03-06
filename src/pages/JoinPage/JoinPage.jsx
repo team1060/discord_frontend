@@ -1,11 +1,11 @@
 import { Link, useNavigate } from 'react-router-dom';
-import Form from '../../components/Form';
+import Form from 'components/Form';
 import { GoChevronDown } from 'react-icons/go';
-import { apiRequest } from '../../api/request';
-import { API_URL } from '../../api/urls';
+import { apiRequest } from 'api/request';
+import { API_URL } from 'api/urls';
 import { useEffect, useState } from 'react';
-import { PATH } from '../../utils/paths/paths';
-import { login } from '../../api/hooks/login';
+import { PATH } from 'utils/paths/paths';
+import { login } from 'api/hooks/login';
 
 const JoinPage = () => {
   const navigate = useNavigate();

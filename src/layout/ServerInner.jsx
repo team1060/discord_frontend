@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ServerListItem from './ServerListItem';
+import ServerListItem from 'layout/ServerListItem';
 import { FaPlus } from 'react-icons/fa6';
 import { FaCompass } from 'react-icons/fa';
 

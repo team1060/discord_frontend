@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
-import { PATH } from '../utils/paths/paths';
-import PageRoutes from '../pages';
-import ThemeProvider from '../components/ThemeProvider';
+import { PATH } from 'utils/paths/paths';
+import PageRoutes from 'pages';
+import ThemeProvider from 'components/ThemeProvider';
 
 const routeComponents = [
   { path: PATH.LOGIN, component: PageRoutes.LoginPage, theme: 'primary' },

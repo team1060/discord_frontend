@@ -1,6 +1,5 @@
 import { handleLogout } from 'api/hooks/logout';
-import ItemCard from 'components/ItemCard/ItemCard';
-import Scroller from 'components/Scroller/Scroller';
+import { ItemCard, Scroller } from 'components/index';
 
 const MainSectionAside = () => {
   return (

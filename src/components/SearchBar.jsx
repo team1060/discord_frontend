@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import './SearchBar.scss';
 
 const SearchBar = ({ label, className, tagName }) => {
   const Component = tagName === 'button' ? 'button' : 'label';

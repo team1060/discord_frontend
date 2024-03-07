@@ -1,11 +1,9 @@
 import PropTypes from 'prop-types';
-import SearchBar from 'components/SearchBar';
-import './FriendSection.scss';
-import PeopleListItem from 'components/PeopleListItem/PeopleListItem';
 
 import { useState } from 'react';
 import { MenuIcon, MessageIcon } from 'assets/images/icons/tb';
 import { ZeroIcon } from 'assets/images/icons/fa';
+import { PeopleListItem, SearchBar } from './index';
 
 const FriendSection = ({ state, stateFriend }) => {
   const [friends, SetFriends] = useState([

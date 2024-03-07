@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import Channel from 'components/Channel/Channel';
-import Scroller from 'components/Scroller/Scroller';
 import { PATH } from 'utils/paths/paths';
 import { FriendIcon, PlusIcon, ShopIcon } from 'assets/images/icons/fa';
+import { Scroller, Channel } from 'components/index';
 
 const MainNavArticle = () => {
   const [channels, setChannels] = useState([]);

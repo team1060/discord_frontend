@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
-import './PeopleListItem.scss';
-import UserInfo from 'components/UserInfo';
-import ActionButtons from 'components/ActionButtons';
+import { UserInfo, ActionButtons } from './index';
 
 const PeopleListItem = (props) => {
   return (

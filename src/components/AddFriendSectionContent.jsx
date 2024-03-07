@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import './AddFriendSectionContent.scss';
 import { API_URL } from 'api/urls';
 import { apiRequest } from 'api/request';
-import PeopleListItem from 'components/PeopleListItem/PeopleListItem';
 import { MenuIcon, MessageIcon } from 'assets/images/icons/tb';
+import { PeopleListItem } from './index';
 
 const AddFriendSectionContent = () => {
   const [inputText, setInputText] = useState('');

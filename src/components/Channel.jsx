@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import Avatar from 'components/Avatar';
+import { Avatar } from './index';
 import { XmarkIcon } from 'assets/images/icons/fa6';
 
 const Channel = ({ link, avatar, name, onDelete }) => {

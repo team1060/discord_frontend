@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
-import './ItemCard.scss';
-import UserInfo from 'components/UserInfo';
 import { ZeroIcon } from 'assets/images/icons/fa';
+import { UserInfo } from './index';
 
 const ItemCard = ({ className }) => {
   return (

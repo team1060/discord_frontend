@@ -1,6 +1,5 @@
 // Modal.jsx
 import PropTypes from 'prop-types';
-import './Modal.scss';
 
 const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;

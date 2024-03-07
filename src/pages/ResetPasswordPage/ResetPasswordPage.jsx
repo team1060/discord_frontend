@@ -1,4 +1,3 @@
-import Form from 'components/Form';
 import { useEffect, useState } from 'react';
 import { apiRequest } from 'api/request';
 import { API_URL } from 'api/urls';
@@ -6,6 +5,7 @@ import { jwtDecode } from 'jwt-decode';
 import { login } from 'api/hooks/login';
 import { PATH } from 'utils/paths/paths';
 import { useNavigate } from 'react-router-dom';
+import { Form } from 'components/index';
 
 const ResetPasswordPage = () => {
   const hash = window.location.hash;

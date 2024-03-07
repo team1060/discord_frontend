@@ -1,6 +1,5 @@
-import Avatar from 'components/Avatar';
 import PropTypes from 'prop-types';
-import './UserInfo.scss';
+import { Avatar } from './index';
 
 const UserInfo = ({ avatar, username, state }) => {
   return (

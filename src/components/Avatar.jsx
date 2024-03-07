@@ -1,4 +1,3 @@
-import './Avatar.scss';
 import PropTypes from 'prop-types';
 
 const Avatar = ({ avatar }) => {

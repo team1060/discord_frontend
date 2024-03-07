@@ -1,5 +1,3 @@
-// Form.jsx
-
 import PropTypes from 'prop-types';
 
 const Form = ({ children, className, onSubmit }) => {

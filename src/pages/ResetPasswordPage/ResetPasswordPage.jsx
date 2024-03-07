@@ -3,9 +3,10 @@ import { apiRequest } from 'api/request';
 import { API_URL } from 'api/urls';
 import { jwtDecode } from 'jwt-decode';
 import { login } from 'api/hooks/login';
-import { PATH } from 'utils/paths/paths';
+import { PATH } from 'utils/paths';
 import { useNavigate } from 'react-router-dom';
 import { Form } from 'components/index';
+import { passwordRegex } from 'utils/regex';
 
 const ResetPasswordPage = () => {
   const hash = window.location.hash;
@@ -30,7 +31,7 @@ const ResetPasswordPage = () => {
 
   const handleSubmit = async () => {
     const checkPasswordDuplicate = (password) => {
-      const regex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
+      const regex = passwordRegex;
       if (!regex.test(password)) {
         console.log(password);
         setPasswordLabel('비밀번호 - 비밀번호는 6자 이상이여야 해요.');

@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { PATH } from 'utils/paths/paths';
+import { PATH } from 'utils/paths';
 import PageRoutes from 'pages';
 import ThemeProvider from 'components/ThemeProvider';
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { PATH } from 'utils/paths/paths';
+import { PATH } from 'utils/paths';
 import { FriendIcon, PlusIcon, ShopIcon } from 'assets/images/icons/fa';
 import { Scroller, Channel } from 'components/index';
 

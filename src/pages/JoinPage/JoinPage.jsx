@@ -2,10 +2,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { apiRequest } from 'api/request';
 import { API_URL } from 'api/urls';
 import { useEffect, useState } from 'react';
-import { PATH } from 'utils/paths/paths';
+import { PATH } from 'utils/paths';
 import { login } from 'api/hooks/login';
 import { DownIcon } from 'assets/images/icons/go';
 import { Form } from 'components/index';
+import { emailRegex, passwordRegex } from 'utils/regex';
 
 const JoinPage = () => {
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ const JoinPage = () => {
         setEmailInputClass('input-label-invalid');
         return false;
       }
-      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const regex = emailRegex;
       if (!regex.test(email)) {
         setEmailLabel('이메일 - 이메일 형식이 올바르지 않습니다.');
         setEmailInputClass('input-label-invalid');
@@ -63,7 +64,7 @@ const JoinPage = () => {
     };
 
     const checkPasswordDuplicate = (password) => {
-      const regex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
+      const regex = passwordRegex;
       if (!regex.test(password)) {
         console.log(password);
         setPasswordLabel(

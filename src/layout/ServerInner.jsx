@@ -18,8 +18,8 @@ const ServerInner = () => {
       {servers.map((server, index) => (
         <ServerListItem key={index} link={server.link} className={server.className} name={server.name} />
       ))}
-      <ServerListItem onClick={handleAddServer} className="distinct" name={<PlusIcon size="20" />} />
-      <ServerListItem link="" className="distinct" name={<CompassIcon size="20" />} />
+      <ServerListItem onClick={handleAddServer} className="distinct" name={<PlusIcon size={20} />} />
+      <ServerListItem link="" className="distinct" name={<CompassIcon size={20} />} />
     </>
   );
 };

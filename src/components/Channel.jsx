@@ -19,7 +19,7 @@ const Channel = ({ link, avatar, name, onDelete }) => {
           </div>
         </Link>
         <div className="close-button" onClick={onDelete}>
-          <XmarkIcon size="16" />
+          <XmarkIcon size={16} />
         </div>
       </div>
     </li>

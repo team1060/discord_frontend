@@ -9,7 +9,7 @@ const MainNavArticle = () => {
   const handleDirectMessageAdd = () => {
     setChannels((prevChannels) => [
       ...prevChannels,
-      { link: '', avatar: <FriendIcon size="24" />, name: '새로운 채널' },
+      { link: '', avatar: <FriendIcon size={24} />, name: '새로운 채널' },
       // 추후 실제 값으로 수정
     ]);
   };
@@ -18,12 +18,12 @@ const MainNavArticle = () => {
       <Scroller>
         <ul>
           <div style={{ height: '8px' }}></div>
-          <Channel link={PATH.MAIN_SCREEN} avatar={<FriendIcon size="24" />} name="친구"></Channel>
-          <Channel link={PATH.SHOP} avatar={<ShopIcon size="24" />} name="상점"></Channel>
+          <Channel link={PATH.MAIN_SCREEN} avatar={<FriendIcon size={24} />} name="친구"></Channel>
+          <Channel link={PATH.SHOP} avatar={<ShopIcon size={24} />} name="상점"></Channel>
           <h2 className="small channel-header">
             <span className="header-text">다이렉트 메시지</span>
             <div className="header-button" onClick={handleDirectMessageAdd}>
-              <PlusIcon />
+              <PlusIcon size={12} />
             </div>
           </h2>
           {channels.map((channel, index) => (

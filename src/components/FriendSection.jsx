@@ -7,15 +7,15 @@ import { PeopleListItem, SearchBar } from './index';
 
 const FriendSection = ({ state, stateFriend }) => {
   const [friends, SetFriends] = useState([
-    { avatar: <ZeroIcon size="24" />, state: '온라인', username: '이길호' },
+    { avatar: <ZeroIcon size={32} />, state: '온라인', username: '이길호', userhash: 'gilho106' },
 
-    { avatar: <ZeroIcon size="24" />, state: '온라인', username: '이길호' },
+    { avatar: <ZeroIcon size={32} />, state: '온라인', username: '이길호', userhash: 'gilho106' },
   ]);
 
   const handleAddFriend = () => {
     SetFriends((prevFriends) => [
       ...prevFriends,
-      { avatar: <ZeroIcon size="24" />, state: '온라인', username: '이길호' }, // 추후 실제 값으로 수정
+      { avatar: <ZeroIcon size={32} />, state: '온라인', username: '이길호' }, // 추후 실제 값으로 수정
     ]);
   };
 
@@ -39,6 +39,7 @@ const FriendSection = ({ state, stateFriend }) => {
             avatar={friend.avatar}
             state={friend.state}
             username={friend.username}
+            userhash={friend.userhash}
             onClick={handleAddFriend}
             actions={[
               { Icon: MessageIcon, onClick: () => handleSendMessage() },

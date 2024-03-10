@@ -5,7 +5,7 @@ const ActionButtons = ({ actions }) => {
     <div className="action">
       {actions.map((ActionIcon, index) => (
         <div className="action-button" key={index} onClick={ActionIcon.onClick}>
-          <ActionIcon.Icon size="24" />
+          <ActionIcon.Icon size={24} />
         </div>
       ))}
     </div>

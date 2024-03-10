@@ -9,7 +9,7 @@ const MainSectionHeader = ({ selectedTab, onTabChange, tabs }) => {
         <div className="header-inner">
           <div className="children">
             <div className="avatarWrapper">
-              <FriendIcon size="24" />
+              <FriendIcon size={24} />
             </div>
             <div className="titleWrapper">
               <h2 className="title base">친구</h2>
@@ -31,18 +31,18 @@ const MainSectionHeader = ({ selectedTab, onTabChange, tabs }) => {
           <div className="toolbar">
             <div className="iconWrapper">
               <div className="icon">
-                <MessagePlusIcon size="24" />
+                <MessagePlusIcon size={24} />
               </div>
               <div className="divider"></div>
             </div>
             <div className="iconWrapper">
               <div className="icon">
-                <MailIcon size="24" />
+                <MailIcon size={24} />
               </div>
             </div>
             <div className="iconWrapper">
               <div className="icon">
-                <HelpCircleIcon size="24" />
+                <HelpCircleIcon size={24} />
               </div>
             </div>
           </div>

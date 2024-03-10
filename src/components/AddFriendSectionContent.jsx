@@ -100,7 +100,8 @@ const AddFriendSectionContent = () => {
             key={index}
             avatar={friend.avatar}
             state={friend.state}
-            username={friend.username}
+            username={friend.nickname}
+            userhash={friend.userHash}
             actions={[
               { Icon: MessageIcon, onClick: () => handleSendMessage() },
               { Icon: MenuIcon, onClick: () => handleOpenMenu() },

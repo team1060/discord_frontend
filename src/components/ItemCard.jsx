@@ -5,7 +5,7 @@ import { UserInfo } from './index';
 const ItemCard = ({ className }) => {
   return (
     <div className={`itemCard ${className}`}>
-      <UserInfo avatar={<ZeroIcon size="24" />} state={'온라인'} username={'이길호'} />
+      <UserInfo avatar={<ZeroIcon size={24} />} state={'온라인'} username={'이길호'} />
       <ItemCard.body />
     </div>
   );

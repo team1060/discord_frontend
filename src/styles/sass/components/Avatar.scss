@@ -1,4 +1,5 @@
 .avatar {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,4 +8,27 @@
   height: 32px;
   margin-right: 12px;
   border-radius: 50%;
+  z-index: 0;
+}
+
+.state {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  bottom: 0px;
+  right: 0px;
+  background-color: transparent; /* 배경색을 투명하게 설정하여 .avatar를 숨깁니다. */
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.stateCircle {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  z-index: 2;
+  background: $success-color; /* 이 부분은 사용자가 설정한 변수인지 확인해야 합니다. */
+  box-sizing: border-box;
 }

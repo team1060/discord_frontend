@@ -5,7 +5,7 @@ const PeopleListItem = (props) => {
   return (
     <div className="people-item" onClick={props.onClick}>
       <div className="item-content">
-        <UserInfo avatar={props.avatar} username={props.username} state={props.state} />
+        <UserInfo avatar={props.avatar} username={props.username} userhash={props.userhash} state={props.state} />
         <ActionButtons actions={props.actions} />
       </div>
     </div>
@@ -15,6 +15,7 @@ const PeopleListItem = (props) => {
 PeopleListItem.propTypes = {
   avatar: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
   username: PropTypes.string.isRequired,
+  userhash: PropTypes.string.isRequired,
   state: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   actions: PropTypes.arrayOf(

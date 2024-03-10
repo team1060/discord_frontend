@@ -7,6 +7,14 @@
     flex-direction: column;
     overflow: hidden;
 
+    .info {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      overflow: hidden;
+    }
     .username {
       display: flex;
       flex-grow: 1;
@@ -20,9 +28,17 @@
       font-weight: $username-font-weight;
     }
 
+    .userhash {
+      display: none;
+      margin-left: 5px;
+      font-size: $user-info-other-font-size;
+    }
+
     .subtext {
       font-size: 12px;
       font-weight: $base-font-weight;
     }
   }
+
+  
 }
